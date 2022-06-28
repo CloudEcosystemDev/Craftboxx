@@ -1,0 +1,70 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "title": "StoreProjectRequest",
+            "required": [
+                "title",
+                "customer_id"
+            ],
+            "type": "object",
+            "allOf": [
+                {
+                    "title": "UpdateProjectRequest",
+                    "properties": {
+                        "title": {
+                            "title": "title",
+                            "description": "The project title",
+                            "type": "string"
+                        },
+                        "project_nr": {
+                            "title": "project_nr",
+                            "description": "The project number.",
+                            "type": "string"
+                        },
+                        "source": {
+                            "title": "source",
+                            "description": "The project source",
+                            "type": "string"
+                        },
+                        "source_external_id": {
+                            "title": "source_external_id",
+                            "description": "The project source_external_id",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                {
+                    "properties": {
+                        "customer_id": {
+                            "title": "customer_id",
+                            "description": "The customer id",
+                            "type": "integer"
+                        },
+                        "title": {
+                            "title": "title",
+                            "description": "The customer title",
+                            "type": "string"
+                        },
+                        "project_nr": {
+                            "title": "project_nr",
+                            "description": "The custom project_nr. Enter '(auto)' for automatic set if possible.",
+                            "type": "string"
+                        },
+                        "source": {
+                            "title": "source",
+                            "description": "The customer source",
+                            "type": "string"
+                        },
+                        "source_external_id": {
+                            "title": "source_external_id",
+                            "description": "The customer source_external_id",
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

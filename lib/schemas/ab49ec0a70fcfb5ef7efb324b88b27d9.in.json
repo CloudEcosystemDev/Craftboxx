@@ -1,0 +1,52 @@
+{
+    "type": "object",
+    "properties": {
+        "q": {
+            "required": false,
+            "type": "string"
+        },
+        "order_by": {
+            "required": false,
+            "type": "string"
+        },
+        "order_direction": {
+            "required": false,
+            "type": "string",
+            "default": "asc",
+            "enum": [
+                "asc",
+                "desc"
+            ]
+        },
+        "id[]": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "integer"
+            }
+        },
+        "exclude[]": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "integer"
+            }
+        },
+        "perPage": {
+            "required": false,
+            "type": "integer"
+        },
+        "page": {
+            "required": false,
+            "type": "integer",
+            "default": 1
+        },
+        "with[]": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    }
+}

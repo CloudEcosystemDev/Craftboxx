@@ -1,0 +1,55 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "title": "StoreToolGroupRequest",
+            "required": [
+                "name",
+                "color"
+            ],
+            "type": "object",
+            "allOf": [
+                {
+                    "title": "UpdateToolGroupRequest",
+                    "properties": {
+                        "name": {
+                            "title": "name",
+                            "description": "Tool Group Name",
+                            "type": "string"
+                        },
+                        "color": {
+                            "title": "color",
+                            "description": "Group color",
+                            "type": "string"
+                        },
+                        "source": {
+                            "title": "source",
+                            "description": "The group source",
+                            "type": "string"
+                        },
+                        "source_external_id": {
+                            "title": "source_external_id",
+                            "description": "The group source_external_id",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                {
+                    "properties": {
+                        "name": {
+                            "title": "name",
+                            "description": "Tool Group Name",
+                            "type": "string"
+                        },
+                        "color": {
+                            "title": "color",
+                            "description": "Group color in Hex Format",
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

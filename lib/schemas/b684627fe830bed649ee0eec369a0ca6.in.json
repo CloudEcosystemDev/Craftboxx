@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "employeeId": {
+            "required": true,
+            "type": "integer"
+        }
+    }
+}

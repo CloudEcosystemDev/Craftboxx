@@ -1,0 +1,35 @@
+{
+    "type": "object",
+    "properties": {
+        "projectId": {
+            "required": true,
+            "type": "integer"
+        },
+        "requestBody": {
+            "title": "UpdateProjectRequest",
+            "properties": {
+                "title": {
+                    "title": "title",
+                    "description": "The project title",
+                    "type": "string"
+                },
+                "project_nr": {
+                    "title": "project_nr",
+                    "description": "The project number.",
+                    "type": "string"
+                },
+                "source": {
+                    "title": "source",
+                    "description": "The project source",
+                    "type": "string"
+                },
+                "source_external_id": {
+                    "title": "source_external_id",
+                    "description": "The project source_external_id",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "signatureTemplateId": {
+            "required": true,
+            "type": "integer"
+        }
+    }
+}

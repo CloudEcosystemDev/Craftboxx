@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "addressId": {
+            "required": true,
+            "type": "integer"
+        }
+    }
+}

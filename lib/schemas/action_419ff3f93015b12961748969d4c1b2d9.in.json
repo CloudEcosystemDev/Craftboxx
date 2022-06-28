@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "tagsId": {
+            "required": true,
+            "type": "integer"
+        }
+    }
+}

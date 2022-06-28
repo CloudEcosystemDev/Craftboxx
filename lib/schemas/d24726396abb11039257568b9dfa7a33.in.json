@@ -1,0 +1,44 @@
+{
+    "type": "object",
+    "properties": {
+        "timesheetId": {
+            "required": true,
+            "type": "integer"
+        },
+        "requestBody": {
+            "title": "UpdateTimesheetRequest",
+            "properties": {
+                "end": {
+                    "title": "end",
+                    "description": "Time sheet end date",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": false
+                },
+                "working_time": {
+                    "title": "working_time",
+                    "description": "Time sheet working time(minutes)",
+                    "type": "integer",
+                    "nullable": true
+                },
+                "break_time": {
+                    "title": "break_time",
+                    "description": "Time sheet break time(minutes)",
+                    "type": "integer",
+                    "nullable": true
+                },
+                "source": {
+                    "title": "source",
+                    "description": "The timesheet source",
+                    "type": "string"
+                },
+                "source_external_id": {
+                    "title": "source_external_id",
+                    "description": "The timesheet source_external_id",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

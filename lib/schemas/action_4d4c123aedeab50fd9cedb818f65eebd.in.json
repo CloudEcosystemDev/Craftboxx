@@ -1,0 +1,92 @@
+{
+    "type": "object",
+    "properties": {
+        "documentationId": {
+            "required": true,
+            "type": "integer"
+        },
+        "requestBody": {
+            "title": "UpdateDocumentationRequest",
+            "properties": {
+                "assignment_id": {
+                    "title": "assignment_id",
+                    "description": "The worksheet id to add to the documentation",
+                    "type": "integer"
+                },
+                "author_id": {
+                    "title": "author_id",
+                    "description": "The author of this documentation (only customizable for type TIME)",
+                    "type": "integer"
+                },
+                "title": {
+                    "title": "title",
+                    "description": "The documentation title",
+                    "type": "string"
+                },
+                "description": {
+                    "title": "description",
+                    "description": "The documentation description",
+                    "type": "string"
+                },
+                "type": {
+                    "title": "type",
+                    "description": "The documentation type - NOTE, PHOTO, SIGNING, DRAWING, TIME, PDF, ATTACHMENT, MATERIAL",
+                    "type": "string",
+                    "default": "PHOTO"
+                },
+                "state": {
+                    "title": "state",
+                    "description": "Documentation state - NOT_ACCEPTED, ACCEPTED_WITH_COMMENT, ACCEPTED_WO_COMMENT or null",
+                    "type": "string"
+                },
+                "state_text": {
+                    "title": "state_text",
+                    "description": "Documentation Signing text (Like 'Vertragsgerechet und mangelfrei...' to display and store",
+                    "type": "string"
+                },
+                "working_time": {
+                    "title": "working_time",
+                    "description": "The working time in minutes",
+                    "type": "integer"
+                },
+                "driving_time": {
+                    "title": "driving_time",
+                    "description": "The driving time in minutes",
+                    "type": "integer"
+                },
+                "break_time": {
+                    "title": "break_time",
+                    "description": "The break time in minutes",
+                    "type": "integer"
+                },
+                "documented_on": {
+                    "title": "documented_on",
+                    "description": "The datetime, when the documentation has been documented has been created",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "upload": {
+                    "description": "First documentation upload file. PLEASE ADD _method=put parameter and change method to POST, if you send file uploads (PHP issue. More info:  https://stackoverflow.com/questions/39942670/how-to-send-put-request-with-a-file-and-an-array-of-data-in-laravel)",
+                    "type": "string",
+                    "format": "binary"
+                },
+                "upload2": {
+                    "description": "Second documentation upload file. PLEASE ADD _method=put parameter and change method to POST, if you send file uploads (PHP issue. More info: https://stackoverflow.com/questions/39942670/how-to-send-put-request-with-a-file-and-an-array-of-data-in-laravel)",
+                    "type": "string",
+                    "format": "binary"
+                },
+                "source": {
+                    "title": "source",
+                    "description": "The document source",
+                    "type": "string"
+                },
+                "source_external_id": {
+                    "title": "source_external_id",
+                    "description": "The document source_external_id",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

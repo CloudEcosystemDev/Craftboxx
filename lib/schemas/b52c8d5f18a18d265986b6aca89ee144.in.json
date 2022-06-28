@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "worksheetId": {
+            "required": true,
+            "type": "integer"
+        }
+    }
+}

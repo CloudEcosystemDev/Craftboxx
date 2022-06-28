@@ -1,0 +1,30 @@
+{
+    "version": "1.1.0",
+    "main": "component.json",
+    "dependencies": {
+        "@openintegrationhub/ferryman": "2.1.0",
+        "swagger-client": "^3.8.22",
+        "dayjs": "^1.10.7"
+    },
+    "devDependencies": {
+        "eslint": "8.8.0",
+        "eslint-config-airbnb-base": "15.0.0",
+        "eslint-plugin-import": "2.25.4",
+        "eslint-plugin-jest": "22.1.0",
+        "eslint-plugin-json": "1.4.0",
+        "eslint-plugin-mocha": "5.2.0"
+    },
+    "author": {
+        "name": "Open Integration Hub"
+    },
+    "license": "Apache-2.0",
+    "name": "Craftboxx",
+    "description": "\n# Welcome!\n\nHere you see the documentation of plan it api.\n\n- If you are searching for more information to the Craftboxx itself, see [https://www.craftboxx.de](https://www.craftboxx.de).\n- If you want to log into the plan-it interface, visit [https://planit.craftboxx.de](https://planit.craftboxx.de).\n\n## General\n\n- In order to use the api, you need to generate a bearer-access token /plan-it/auth/create-token with your plan-it employee credentials.\n- You have to pass the access token with every api call in the header so that you are authenticated and authorized as a plan-it employee.\n- Your plan it permissions also take effect in the plan it api.\n- This api mostly implements the REST api logic.\n\n## Get / Index Requests\n\n- For every index request you can add a 'q' parameter, which does a generic search over all entities (Example: /articles?q=Bosch Akkuschrauber)\n- For every index request you can add a 'order_by' and a 'order_direction' parameter (Example: /articles?order_by=manufacturer&order_direction=desc)\n- For every index request you can also use a 'id' parameter, which only delivers you specific ids (Example: /articles?id=50 or /articles?id[]=50&id[]=51)\n- For every index request you can also use a 'exclude' parameter, which exclude specific ids (Examples: /articles?exclude=50 or /articles?exclude[]=50&exclude[]=51)\n- For every index request you can use the 'per_page' and 'page' parameter for pagination (Example: /articles?per_page=100&page=3)\n- For every index request you can filter using the attributes. You can search and combine in array or non array syntax. Non array syntax also supports sql-like placeholders (Examples: /articles?manufacturer=Bosch% or /articles?manufacturer[]=Bosch&manufacturer[]=Makita)\n- See the post or put request to see all possible attributes, because those are mostly not documented in index request\n- For every index request, you can also filter relations. If you want all articles, which are part of assignment id 50, you can use for example /articles?assignments=50 or /articles?assignments[]=50&assignments[]=51 for multiple). A '500' is returned if the relation does not exist.\n- For every index request, you can also count relations. If you to know, how how articles are assigned to a worksheet, you can use for example /assignments?count=articles or /assignments?count[]=articles&count[]=employees.\n- For every index request you can filter by the related model's property, the related model and the property must be devided by a hyphen sign (Example: /projects?customer-customer_number=123)\n- Last but not least you can use a 'with' parameter and load relations. (Example: /articles/?with=assignments or /articles/?with[]=assignments , also loads worksheets [technically: assignments]). A '500' is returned if the relation does not exist.\n\n## Get / Show Requests\n\n- For every model you can also show a specific id. (Example: /articles/50)\n- If the model does not exist, you receive a '404' error code.\n\n## Post / Put Requests\n\n- Creating / Updating models happens using the POST or PUT method.\n- POST creates a new model and returns the resulting model.\n- PUT updates a specific model and returns a '404' if the model does not exist.\n- If validation fails a '422' error code is returned.\n\n## Delete Requests\n\n- You can delete a model using the DELETE method.\n- A '404' error is returned if the model does not exist.\n",
+    "scripts": {
+        "start": "node ./node_modules/@openintegrationhub/ferryman/runGlobal.js",
+        "pretest": "eslint lib test --ext .js --ext .json --fix",
+        "test": "NODE_ENV=test mocha test/* --timeout 10000",
+        "test-watch": "nodemon --exec \"npm test \" ",
+        "lint": "eslint --fix 'lib/**/*.js'"
+    }
+}

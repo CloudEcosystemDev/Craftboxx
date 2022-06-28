@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "created_at_before": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

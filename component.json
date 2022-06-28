@@ -1,0 +1,1472 @@
+{
+    "title": "Craftboxx Plan it API",
+    "description": "\n# Welcome!\n\nHere you see the documentation of plan it api.\n\n- If you are searching for more information to the Craftboxx itself, see [https://www.craftboxx.de](https://www.craftboxx.de).\n- If you want to log into the plan-it interface, visit [https://planit.craftboxx.de](https://planit.craftboxx.de).\n\n## General\n\n- In order to use the api, you need to generate a bearer-access token /plan-it/auth/create-token with your plan-it employee credentials.\n- You have to pass the access token with every api call in the header so that you are authenticated and authorized as a plan-it employee.\n- Your plan it permissions also take effect in the plan it api.\n- This api mostly implements the REST api logic.\n\n## Get / Index Requests\n\n- For every index request you can add a 'q' parameter, which does a generic search over all entities (Example: /articles?q=Bosch Akkuschrauber)\n- For every index request you can add a 'order_by' and a 'order_direction' parameter (Example: /articles?order_by=manufacturer&order_direction=desc)\n- For every index request you can also use a 'id' parameter, which only delivers you specific ids (Example: /articles?id=50 or /articles?id[]=50&id[]=51)\n- For every index request you can also use a 'exclude' parameter, which exclude specific ids (Examples: /articles?exclude=50 or /articles?exclude[]=50&exclude[]=51)\n- For every index request you can use the 'per_page' and 'page' parameter for pagination (Example: /articles?per_page=100&page=3)\n- For every index request you can filter using the attributes. You can search and combine in array or non array syntax. Non array syntax also supports sql-like placeholders (Examples: /articles?manufacturer=Bosch% or /articles?manufacturer[]=Bosch&manufacturer[]=Makita)\n- See the post or put request to see all possible attributes, because those are mostly not documented in index request\n- For every index request, you can also filter relations. If you want all articles, which are part of assignment id 50, you can use for example /articles?assignments=50 or /articles?assignments[]=50&assignments[]=51 for multiple). A '500' is returned if the relation does not exist.\n- For every index request, you can also count relations. If you to know, how how articles are assigned to a worksheet, you can use for example /assignments?count=articles or /assignments?count[]=articles&count[]=employees.\n- For every index request you can filter by the related model's property, the related model and the property must be devided by a hyphen sign (Example: /projects?customer-customer_number=123)\n- Last but not least you can use a 'with' parameter and load relations. (Example: /articles/?with=assignments or /articles/?with[]=assignments , also loads worksheets [technically: assignments]). A '500' is returned if the relation does not exist.\n\n## Get / Show Requests\n\n- For every model you can also show a specific id. (Example: /articles/50)\n- If the model does not exist, you receive a '404' error code.\n\n## Post / Put Requests\n\n- Creating / Updating models happens using the POST or PUT method.\n- POST creates a new model and returns the resulting model.\n- PUT updates a specific model and returns a '404' if the model does not exist.\n- If validation fails a '422' error code is returned.\n\n## Delete Requests\n\n- You can delete a model using the DELETE method.\n- A '404' error is returned if the model does not exist.\n",
+    "docsUrl": "",
+    "url": "https://api.craftboxx.de/",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.craftboxx.de/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "auth_bearerAuth": {
+                "label": "bearerAuth (JWT)",
+                "viewClass": "TextFieldView",
+                "note": "Enter the token only."
+            }
+        }
+    },
+    "triggers": {
+        "lookup": {
+            "main": "./lib/lookups/lookup.js",
+            "title": "Function to run a lookup",
+            "description": "Function to call an internal trigger or action"
+        },
+        "action_81e63e659c38de4b6eaec9097325f689": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns absence recurring rules ",
+            "callParams": {
+                "pathName": "/plan-it/absences/recurring-rules",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_81e63e659c38de4b6eaec9097325f689.in.json",
+                "out": "./lib/schemas/action_81e63e659c38de4b6eaec9097325f689.out.json"
+            }
+        },
+        "action_80cb58623fa2e1d730a407ed70db4c1e": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns absences",
+            "callParams": {
+                "pathName": "/plan-it/absences",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_80cb58623fa2e1d730a407ed70db4c1e.in.json",
+                "out": "./lib/schemas/action_80cb58623fa2e1d730a407ed70db4c1e.out.json"
+            }
+        },
+        "action_735e10ef129601e408ef235aa37fb297": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns articles groups",
+            "callParams": {
+                "pathName": "/plan-it/articles/groups",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_735e10ef129601e408ef235aa37fb297.in.json",
+                "out": "./lib/schemas/action_735e10ef129601e408ef235aa37fb297.out.json"
+            }
+        },
+        "e8bf3f3e9cc1f6bf6c4efa5100ac611a": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns articles",
+            "callParams": {
+                "pathName": "/plan-it/articles",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/e8bf3f3e9cc1f6bf6c4efa5100ac611a.in.json",
+                "out": "./lib/schemas/e8bf3f3e9cc1f6bf6c4efa5100ac611a.out.json"
+            }
+        },
+        "f5679dd66dd627d197d5e4b86c9636bd": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns worksheet recurring rules",
+            "callParams": {
+                "pathName": "/plan-it/assignments/recurring-rules",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/f5679dd66dd627d197d5e4b86c9636bd.in.json",
+                "out": "./lib/schemas/f5679dd66dd627d197d5e4b86c9636bd.out.json"
+            }
+        },
+        "action_52e2315fe18cf54d1e8b43ce6f2bea60": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns all available labels",
+            "callParams": {
+                "pathName": "/plan-it/assignments/tags",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_52e2315fe18cf54d1e8b43ce6f2bea60.in.json",
+                "out": "./lib/schemas/action_52e2315fe18cf54d1e8b43ce6f2bea60.out.json"
+            }
+        },
+        "d0a8bc7e9272759f694dc2a6ca4e9932": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns all available absence types",
+            "callParams": {
+                "pathName": "/plan-it/absences/types",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/d0a8bc7e9272759f694dc2a6ca4e9932.in.json",
+                "out": "./lib/schemas/d0a8bc7e9272759f694dc2a6ca4e9932.out.json"
+            }
+        },
+        "da72e8fdde8e937767b4a43e4d361278": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns the not availale master data in a date range",
+            "callParams": {
+                "pathName": "/plan-it/assignments/check-availability",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/da72e8fdde8e937767b4a43e4d361278.in.json",
+                "out": "./lib/schemas/da72e8fdde8e937767b4a43e4d361278.out.json"
+            }
+        },
+        "action_87e79cd28d0e619d3bbb5ba85c239002": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns worksheets",
+            "callParams": {
+                "pathName": "/plan-it/assignments",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_87e79cd28d0e619d3bbb5ba85c239002.in.json",
+                "out": "./lib/schemas/action_87e79cd28d0e619d3bbb5ba85c239002.out.json"
+            }
+        },
+        "action_5b12d7faff08a93f76154bc60c8c112d": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Revokes current user's access token",
+            "callParams": {
+                "pathName": "/plan-it/auth/revoke-token",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_5b12d7faff08a93f76154bc60c8c112d.in.json",
+                "out": "./lib/schemas/action_5b12d7faff08a93f76154bc60c8c112d.out.json"
+            }
+        },
+        "action_16c591976ec6af03645833d82a190b8a": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns documents",
+            "callParams": {
+                "pathName": "/plan-it/documents",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_16c591976ec6af03645833d82a190b8a.in.json",
+                "out": "./lib/schemas/action_16c591976ec6af03645833d82a190b8a.out.json"
+            }
+        },
+        "action_64bdf64df2ec4f2e8e16416969b2b795": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns all addresses",
+            "callParams": {
+                "pathName": "/plan-it/customers/addresses",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_64bdf64df2ec4f2e8e16416969b2b795.in.json",
+                "out": "./lib/schemas/action_64bdf64df2ec4f2e8e16416969b2b795.out.json"
+            }
+        },
+        "a7ed19e48047d2e1ad9e97ae3df338d6": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns customers",
+            "callParams": {
+                "pathName": "/plan-it/customers",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/a7ed19e48047d2e1ad9e97ae3df338d6.in.json",
+                "out": "./lib/schemas/a7ed19e48047d2e1ad9e97ae3df338d6.out.json"
+            }
+        },
+        "action_59474959295cdf7c3481db6e5a645794": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns documentations from specific assignment",
+            "callParams": {
+                "pathName": "/plan-it/documentations",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_59474959295cdf7c3481db6e5a645794.in.json",
+                "out": "./lib/schemas/action_59474959295cdf7c3481db6e5a645794.out.json"
+            }
+        },
+        "action_0e572c4cbfc965e7da56607e3dc4ab43": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns employees",
+            "callParams": {
+                "pathName": "/plan-it/employees",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_0e572c4cbfc965e7da56607e3dc4ab43.in.json",
+                "out": "./lib/schemas/action_0e572c4cbfc965e7da56607e3dc4ab43.out.json"
+            }
+        },
+        "action_99ae74b1bc5c24aa099bf961ca3bdfd0": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns your desktop notficiations",
+            "callParams": {
+                "pathName": "/plan-it/my/desktop-notifications",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_99ae74b1bc5c24aa099bf961ca3bdfd0.in.json",
+                "out": "./lib/schemas/action_99ae74b1bc5c24aa099bf961ca3bdfd0.out.json"
+            }
+        },
+        "bde48ca8c38e85a6633279e5ed6bdca9": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns documentation signature templates",
+            "callParams": {
+                "pathName": "/plan-it/documentations/signatures",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/bde48ca8c38e85a6633279e5ed6bdca9.in.json",
+                "out": "./lib/schemas/bde48ca8c38e85a6633279e5ed6bdca9.out.json"
+            }
+        },
+        "ab49ec0a70fcfb5ef7efb324b88b27d9": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns employees groups",
+            "callParams": {
+                "pathName": "/plan-it/employees/groups",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/ab49ec0a70fcfb5ef7efb324b88b27d9.in.json",
+                "out": "./lib/schemas/ab49ec0a70fcfb5ef7efb324b88b27d9.out.json"
+            }
+        },
+        "action_8e3e02b117c2c580afc82f2a3c799432": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns licenses",
+            "callParams": {
+                "pathName": "/plan-it/licenses",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_8e3e02b117c2c580afc82f2a3c799432.in.json",
+                "out": "./lib/schemas/action_8e3e02b117c2c580afc82f2a3c799432.out.json"
+            }
+        },
+        "action_338ea4c0ef6d5d669a96b293f0baf9ab": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns projects",
+            "callParams": {
+                "pathName": "/plan-it/projects",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_338ea4c0ef6d5d669a96b293f0baf9ab.in.json",
+                "out": "./lib/schemas/action_338ea4c0ef6d5d669a96b293f0baf9ab.out.json"
+            }
+        },
+        "e56db78478fb31f55f84d3b3e2abf46f": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns your employee information",
+            "callParams": {
+                "pathName": "/plan-it/my/employee",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/e56db78478fb31f55f84d3b3e2abf46f.in.json",
+                "out": "./lib/schemas/e56db78478fb31f55f84d3b3e2abf46f.out.json"
+            }
+        },
+        "action_4bd124d6f4ff5d2b8ab873e7dabb81ec": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns roles",
+            "callParams": {
+                "pathName": "/plan-it/roles",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_4bd124d6f4ff5d2b8ab873e7dabb81ec.in.json",
+                "out": "./lib/schemas/action_4bd124d6f4ff5d2b8ab873e7dabb81ec.out.json"
+            }
+        },
+        "action_38e21873b84d1fa9536fb8ebe8042e92": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns timesheets",
+            "callParams": {
+                "pathName": "/plan-it/timesheets",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_38e21873b84d1fa9536fb8ebe8042e92.in.json",
+                "out": "./lib/schemas/action_38e21873b84d1fa9536fb8ebe8042e92.out.json"
+            }
+        },
+        "action_3c04f5ae33784344c36133acbcb0d08c": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns icons",
+            "callParams": {
+                "pathName": "/plan-it/icons",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_3c04f5ae33784344c36133acbcb0d08c.in.json",
+                "out": "./lib/schemas/action_3c04f5ae33784344c36133acbcb0d08c.out.json"
+            }
+        },
+        "action_5d68b8dd8e052b2348892d2fd4a4cf51": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns tool groups",
+            "callParams": {
+                "pathName": "/plan-it/tools/groups",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_5d68b8dd8e052b2348892d2fd4a4cf51.in.json",
+                "out": "./lib/schemas/action_5d68b8dd8e052b2348892d2fd4a4cf51.out.json"
+            }
+        },
+        "action_4b451f7127bbbf3fa9ebbcfe8cf61f74": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns tools",
+            "callParams": {
+                "pathName": "/plan-it/tools",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_4b451f7127bbbf3fa9ebbcfe8cf61f74.in.json",
+                "out": "./lib/schemas/action_4b451f7127bbbf3fa9ebbcfe8cf61f74.out.json"
+            }
+        },
+        "fbec35e80e8639c151b47b75c50b1be0": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns uploads",
+            "callParams": {
+                "pathName": "/plan-it/uploads",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/fbec35e80e8639c151b47b75c50b1be0.in.json",
+                "out": "./lib/schemas/fbec35e80e8639c151b47b75c50b1be0.out.json"
+            }
+        },
+        "a98c297f1e8a2c52f858133020bd7745": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Returns vehicles",
+            "callParams": {
+                "pathName": "/plan-it/vehicles",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/a98c297f1e8a2c52f858133020bd7745.in.json",
+                "out": "./lib/schemas/a98c297f1e8a2c52f858133020bd7745.out.json"
+            }
+        }
+    },
+    "actions": {
+        "action_9d4c85092d74f89af98ed27b11b2140d": {
+            "main": "./lib/actions/action.js",
+            "title": "Updates a absence recurring rule ",
+            "callParams": {
+                "pathName": "/plan-it/absences/recurring-rules/{recurringRuleId}",
+                "method": "put",
+                "requestContentType": "multipart/form-data"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_9d4c85092d74f89af98ed27b11b2140d.in.json",
+                "out": "./lib/schemas/action_9d4c85092d74f89af98ed27b11b2140d.out.json"
+            }
+        },
+        "action_6b39f271e10e6f140a7a0269c42bce15": {
+            "main": "./lib/actions/action.js",
+            "title": "Returns a specific absence recurring rule",
+            "callParams": {
+                "pathName": "/plan-it/absences/recurring-rules/{recurringRuleId}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_6b39f271e10e6f140a7a0269c42bce15.in.json",
+                "out": "./lib/schemas/action_6b39f271e10e6f140a7a0269c42bce15.out.json"
+            }
+        },
+        "action_86e918b0ba743a0be18c8200a68d026c": {
+            "main": "./lib/actions/action.js",
+            "title": "Add absence",
+            "callParams": {
+                "pathName": "/plan-it/absences",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_86e918b0ba743a0be18c8200a68d026c.in.json",
+                "out": "./lib/schemas/action_86e918b0ba743a0be18c8200a68d026c.out.json"
+            }
+        },
+        "action_71d5e2ca61cfc8543f69fbf4cd62e36f": {
+            "main": "./lib/actions/action.js",
+            "title": "Update absence",
+            "callParams": {
+                "pathName": "/plan-it/absences/{absenceId}",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_71d5e2ca61cfc8543f69fbf4cd62e36f.in.json",
+                "out": "./lib/schemas/action_71d5e2ca61cfc8543f69fbf4cd62e36f.out.json"
+            }
+        },
+        "ebf5a5f676502b3a6ebd3d3fe927ec44": {
+            "main": "./lib/actions/action.js",
+            "title": "Returns specific absence type",
+            "callParams": {
+                "pathName": "/plan-it/absences/types/{typeId}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/ebf5a5f676502b3a6ebd3d3fe927ec44.in.json",
+                "out": "./lib/schemas/ebf5a5f676502b3a6ebd3d3fe927ec44.out.json"
+            }
+        },
+        "bc2017ad217fdff413e6c6130c37cdba": {
+            "main": "./lib/actions/action.js",
+            "title": "Add new absence type",
+            "callParams": {
+                "pathName": "/plan-it/absences/types",
+                "method": "post",
+                "requestContentType": "multipart/form-data"
+            },
+            "metadata": {
+                "in": "./lib/schemas/bc2017ad217fdff413e6c6130c37cdba.in.json",
+                "out": "./lib/schemas/bc2017ad217fdff413e6c6130c37cdba.out.json"
+            }
+        },
+        "action_46b9f0be6fd2104533d64ad2a07cd82b": {
+            "main": "./lib/actions/action.js",
+            "title": "Remove absence type",
+            "callParams": {
+                "pathName": "/plan-it/absences/types/{typeId}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_46b9f0be6fd2104533d64ad2a07cd82b.in.json",
+                "out": "./lib/schemas/action_46b9f0be6fd2104533d64ad2a07cd82b.out.json"
+            }
+        },
+        "e42659e0d49388b15e3b70af01a7df72": {
+            "main": "./lib/actions/action.js",
+            "title": "Add new article group",
+            "callParams": {
+                "pathName": "/plan-it/articles/groups",
+                "method": "post",
+                "requestContentType": "multipart/form-data"
+            },
+            "metadata": {
+                "in": "./lib/schemas/e42659e0d49388b15e3b70af01a7df72.in.json",
+                "out": "./lib/schemas/e42659e0d49388b15e3b70af01a7df72.out.json"
+            }
+        },
+        "action_5063bf7dc81190bf964b9b3a374009a7": {
+            "main": "./lib/actions/action.js",
+            "title": "Create a absence recurring rule",
+            "callParams": {
+                "pathName": "/plan-it/absences/recurring-rules",
+                "method": "post",
+                "requestContentType": "multipart/form-data"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_5063bf7dc81190bf964b9b3a374009a7.in.json",
+                "out": "./lib/schemas/action_5063bf7dc81190bf964b9b3a374009a7.out.json"
+            }
+        },
+        "action_9185dc9b906bb3d82315b61f76336052": {
+            "main": "./lib/actions/action.js",
+            "title": "Returns specific article group",
+            "callParams": {
+                "pathName": "/plan-it/articles/groups/{groupId}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_9185dc9b906bb3d82315b61f76336052.in.json",
+                "out": "./lib/schemas/action_9185dc9b906bb3d82315b61f76336052.out.json"
+            }
+        },
+        "action_7fde5766e2a0d094e49ae5c18935a9bc": {
+            "main": "./lib/actions/action.js",
+            "title": "Deletes a absence recurring rule",
+            "callParams": {
+                "pathName": "/plan-it/absences/recurring-rules/{recurringRuleId}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_7fde5766e2a0d094e49ae5c18935a9bc.in.json",
+                "out": "./lib/schemas/action_7fde5766e2a0d094e49ae5c18935a9bc.out.json"
+            }
+        },
+        "action_6cdbb0970ae4d9b49a83ed99e69d6fff": {
+            "main": "./lib/actions/action.js",
+            "title": "Add article",
+            "callParams": {
+                "pathName": "/plan-it/articles",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_6cdbb0970ae4d9b49a83ed99e69d6fff.in.json",
+                "out": "./lib/schemas/action_6cdbb0970ae4d9b49a83ed99e69d6fff.out.json"
+            }
+        },
+        "ed45224d731e51679f686976a7d91cb5": {
+            "main": "./lib/actions/action.js",
+            "title": "Remove article",
+            "callParams": {
+                "pathName": "/plan-it/articles/{articleId}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/ed45224d731e51679f686976a7d91cb5.in.json",
+                "out": "./lib/schemas/ed45224d731e51679f686976a7d91cb5.out.json"
+            }
+        },
+        "cb71b1e39e091827fc7f0499cd994e97": {
+            "main": "./lib/actions/action.js",
+            "title": "Update article group",
+            "callParams": {
+                "pathName": "/plan-it/articles/groups/{groupId}",
+                "method": "put",
+                "requestContentType": "multipart/form-data"
+            },
+            "metadata": {
+                "in": "./lib/schemas/cb71b1e39e091827fc7f0499cd994e97.in.json",
+                "out": "./lib/schemas/cb71b1e39e091827fc7f0499cd994e97.out.json"
+            }
+        },
+        "d159015d554e034ce78c5eb11838993c": {
+            "main": "./lib/actions/action.js",
+            "title": "Returns a specific worksheet recurring rule",
+            "callParams": {
+                "pathName": "/plan-it/assignments/recurring-rules/{recurringRuleId}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/d159015d554e034ce78c5eb11838993c.in.json",
+                "out": "./lib/schemas/d159015d554e034ce78c5eb11838993c.out.json"
+            }
+        },
+        "action_343c10c809afa1c90af93499591ab2b9": {
+            "main": "./lib/actions/action.js",
+            "title": "Updates a specific absence type",
+            "callParams": {
+                "pathName": "/plan-it/absences/types/{typeId}",
+                "method": "put",
+                "requestContentType": "multipart/form-data"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_343c10c809afa1c90af93499591ab2b9.in.json",
+                "out": "./lib/schemas/action_343c10c809afa1c90af93499591ab2b9.out.json"
+            }
+        },
+        "action_4b67dbd41e5db890d04db828f41ec4fb": {
+            "main": "./lib/actions/action.js",
+            "title": "Add new label",
+            "callParams": {
+                "pathName": "/plan-it/assignments/tags",
+                "method": "post",
+                "requestContentType": "multipart/form-data"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_4b67dbd41e5db890d04db828f41ec4fb.in.json",
+                "out": "./lib/schemas/action_4b67dbd41e5db890d04db828f41ec4fb.out.json"
+            }
+        },
+        "action_8f37ffcac947d5a33c6a4e9b4e6cf864": {
+            "main": "./lib/actions/action.js",
+            "title": "Removes a worksheet label",
+            "callParams": {
+                "pathName": "/plan-it/assignments/tags/{labelId}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_8f37ffcac947d5a33c6a4e9b4e6cf864.in.json",
+                "out": "./lib/schemas/action_8f37ffcac947d5a33c6a4e9b4e6cf864.out.json"
+            }
+        },
+        "action_296bcff6e5318292268c09f819fc3639": {
+            "main": "./lib/actions/action.js",
+            "title": "Remove absence",
+            "callParams": {
+                "pathName": "/plan-it/absences/{absenceId}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_296bcff6e5318292268c09f819fc3639.in.json",
+                "out": "./lib/schemas/action_296bcff6e5318292268c09f819fc3639.out.json"
+            }
+        },
+        "action_419ff3f93015b12961748969d4c1b2d9": {
+            "main": "./lib/actions/action.js",
+            "title": "Returns specific label",
+            "callParams": {
+                "pathName": "/plan-it/assignments/tags/{tagsId}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_419ff3f93015b12961748969d4c1b2d9.in.json",
+                "out": "./lib/schemas/action_419ff3f93015b12961748969d4c1b2d9.out.json"
+            }
+        },
+        "b52c8d5f18a18d265986b6aca89ee144": {
+            "main": "./lib/actions/action.js",
+            "title": "Returns specific worksheet",
+            "callParams": {
+                "pathName": "/plan-it/assignments/{worksheetId}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/b52c8d5f18a18d265986b6aca89ee144.in.json",
+                "out": "./lib/schemas/b52c8d5f18a18d265986b6aca89ee144.out.json"
+            }
+        },
+        "action_634ad1b2aa2a9699fb5dbff8b8c766a8": {
+            "main": "./lib/actions/action.js",
+            "title": "Updates a worksheet label",
+            "callParams": {
+                "pathName": "/plan-it/assignments/tags/{labelId}",
+                "method": "put",
+                "requestContentType": "multipart/form-data"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_634ad1b2aa2a9699fb5dbff8b8c766a8.in.json",
+                "out": "./lib/schemas/action_634ad1b2aa2a9699fb5dbff8b8c766a8.out.json"
+            }
+        },
+        "c71f40648fbdea5cb348d11b1d44083a": {
+            "main": "./lib/actions/action.js",
+            "title": "Removes a worksheet",
+            "callParams": {
+                "pathName": "/plan-it/assignments/{worksheetId}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/c71f40648fbdea5cb348d11b1d44083a.in.json",
+                "out": "./lib/schemas/c71f40648fbdea5cb348d11b1d44083a.out.json"
+            }
+        },
+        "action_1e4a85348564db47735e47bcfe35a5e1": {
+            "main": "./lib/actions/action.js",
+            "title": "Creates and returns an access token",
+            "callParams": {
+                "pathName": "/plan-it/auth/create-token",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_1e4a85348564db47735e47bcfe35a5e1.in.json",
+                "out": "./lib/schemas/action_1e4a85348564db47735e47bcfe35a5e1.out.json"
+            }
+        },
+        "action_9ae2992e82586998195e9dc3d03c8763": {
+            "main": "./lib/actions/action.js",
+            "title": "Returns specific customer address",
+            "callParams": {
+                "pathName": "/plan-it/customers/addresses/{addressId}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_9ae2992e82586998195e9dc3d03c8763.in.json",
+                "out": "./lib/schemas/action_9ae2992e82586998195e9dc3d03c8763.out.json"
+            }
+        },
+        "action_1a16f4996254cf49126cc3ab5e404222": {
+            "main": "./lib/actions/action.js",
+            "title": "Create a worksheet recurring rule",
+            "callParams": {
+                "pathName": "/plan-it/assignments/recurring-rules",
+                "method": "post",
+                "requestContentType": "multipart/form-data"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_1a16f4996254cf49126cc3ab5e404222.in.json",
+                "out": "./lib/schemas/action_1a16f4996254cf49126cc3ab5e404222.out.json"
+            }
+        },
+        "action_456eea23cec07f7ac25720cf9312f53c": {
+            "main": "./lib/actions/action.js",
+            "title": "Add customer address",
+            "callParams": {
+                "pathName": "/plan-it/customers/addresses",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_456eea23cec07f7ac25720cf9312f53c.in.json",
+                "out": "./lib/schemas/action_456eea23cec07f7ac25720cf9312f53c.out.json"
+            }
+        },
+        "action_57afd2f5a1139e59a5df5ab05050196d": {
+            "main": "./lib/actions/action.js",
+            "title": "Updates a specific worksheet",
+            "callParams": {
+                "pathName": "/plan-it/assignments/{worksheetId}",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_57afd2f5a1139e59a5df5ab05050196d.in.json",
+                "out": "./lib/schemas/action_57afd2f5a1139e59a5df5ab05050196d.out.json"
+            }
+        },
+        "action_6572427eb1ae39412d85803250a120a4": {
+            "main": "./lib/actions/action.js",
+            "title": "Returns specific customer",
+            "callParams": {
+                "pathName": "/plan-it/customers/{customerId}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_6572427eb1ae39412d85803250a120a4.in.json",
+                "out": "./lib/schemas/action_6572427eb1ae39412d85803250a120a4.out.json"
+            }
+        },
+        "a68e60c5a1b24ce0102b292d327d07bc": {
+            "main": "./lib/actions/action.js",
+            "title": "Remove customer address",
+            "callParams": {
+                "pathName": "/plan-it/customers/addresses/{addressId}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/a68e60c5a1b24ce0102b292d327d07bc.in.json",
+                "out": "./lib/schemas/a68e60c5a1b24ce0102b292d327d07bc.out.json"
+            }
+        },
+        "action_7db5a7bed5dc6fbbbff4c15868b2a143": {
+            "main": "./lib/actions/action.js",
+            "title": "Update customer",
+            "callParams": {
+                "pathName": "/plan-it/customers/{customerId}",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_7db5a7bed5dc6fbbbff4c15868b2a143.in.json",
+                "out": "./lib/schemas/action_7db5a7bed5dc6fbbbff4c15868b2a143.out.json"
+            }
+        },
+        "ab374c8aa5bf61fac8a92d3ff5fe6e29": {
+            "main": "./lib/actions/action.js",
+            "title": "Update article",
+            "callParams": {
+                "pathName": "/plan-it/articles/{articleId}",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/ab374c8aa5bf61fac8a92d3ff5fe6e29.in.json",
+                "out": "./lib/schemas/ab374c8aa5bf61fac8a92d3ff5fe6e29.out.json"
+            }
+        },
+        "action_20c82566a403866252ae46d699167812": {
+            "main": "./lib/actions/action.js",
+            "title": "Returns specific absence",
+            "callParams": {
+                "pathName": "/plan-it/absences/{absenceId}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_20c82566a403866252ae46d699167812.in.json",
+                "out": "./lib/schemas/action_20c82566a403866252ae46d699167812.out.json"
+            }
+        },
+        "action_5d210a2a0214891bd91caeb8db5e56e6": {
+            "main": "./lib/actions/action.js",
+            "title": "Update customer address",
+            "callParams": {
+                "pathName": "/plan-it/customers/addresses/{addressId}",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_5d210a2a0214891bd91caeb8db5e56e6.in.json",
+                "out": "./lib/schemas/action_5d210a2a0214891bd91caeb8db5e56e6.out.json"
+            }
+        },
+        "action_0a83ce3816d4e86e0bccb67067e7b236": {
+            "main": "./lib/actions/action.js",
+            "title": "Returns specific document",
+            "callParams": {
+                "pathName": "/plan-it/documents/{documentsId}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_0a83ce3816d4e86e0bccb67067e7b236.in.json",
+                "out": "./lib/schemas/action_0a83ce3816d4e86e0bccb67067e7b236.out.json"
+            }
+        },
+        "eddc4df2a5d13ce3fdbdd72b066358f9": {
+            "main": "./lib/actions/action.js",
+            "title": "Add new document",
+            "callParams": {
+                "pathName": "/plan-it/documents",
+                "method": "post",
+                "requestContentType": "multipart/form-data"
+            },
+            "metadata": {
+                "in": "./lib/schemas/eddc4df2a5d13ce3fdbdd72b066358f9.in.json",
+                "out": "./lib/schemas/eddc4df2a5d13ce3fdbdd72b066358f9.out.json"
+            }
+        },
+        "action_503cde823acfc208d5bf1a5eb61a2941": {
+            "main": "./lib/actions/action.js",
+            "title": "Returns specific signature template",
+            "callParams": {
+                "pathName": "/plan-it/documentations/signatures/{signatureTemplateId}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_503cde823acfc208d5bf1a5eb61a2941.in.json",
+                "out": "./lib/schemas/action_503cde823acfc208d5bf1a5eb61a2941.out.json"
+            }
+        },
+        "f4dfcc439622f187031eb86b5bffbd50": {
+            "main": "./lib/actions/action.js",
+            "title": "Remove signature template",
+            "callParams": {
+                "pathName": "/plan-it/documentations/signatures/{signatureTemplateId}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/f4dfcc439622f187031eb86b5bffbd50.in.json",
+                "out": "./lib/schemas/f4dfcc439622f187031eb86b5bffbd50.out.json"
+            }
+        },
+        "a66ce598e3aa2413845f3d04d660498f": {
+            "main": "./lib/actions/action.js",
+            "title": "Add documentation to specified assignment",
+            "callParams": {
+                "pathName": "/plan-it/documentations",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/a66ce598e3aa2413845f3d04d660498f.in.json",
+                "out": "./lib/schemas/a66ce598e3aa2413845f3d04d660498f.out.json"
+            }
+        },
+        "ce2a955dd524677b0ccfc38bb477f1d5": {
+            "main": "./lib/actions/action.js",
+            "title": "Deletes a specific documentation",
+            "callParams": {
+                "pathName": "/plan-it/documentations/{documentationId}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/ce2a955dd524677b0ccfc38bb477f1d5.in.json",
+                "out": "./lib/schemas/ce2a955dd524677b0ccfc38bb477f1d5.out.json"
+            }
+        },
+        "eda908259df82c94e580390beebd0534": {
+            "main": "./lib/actions/action.js",
+            "title": "Update document",
+            "callParams": {
+                "pathName": "/plan-it/documents/{documentId}",
+                "method": "put",
+                "requestContentType": "multipart/form-data"
+            },
+            "metadata": {
+                "in": "./lib/schemas/eda908259df82c94e580390beebd0534.in.json",
+                "out": "./lib/schemas/eda908259df82c94e580390beebd0534.out.json"
+            }
+        },
+        "action_7e06ce28c421188b344f906d954eea55": {
+            "main": "./lib/actions/action.js",
+            "title": "Remove customer",
+            "callParams": {
+                "pathName": "/plan-it/customers/{customerId}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_7e06ce28c421188b344f906d954eea55.in.json",
+                "out": "./lib/schemas/action_7e06ce28c421188b344f906d954eea55.out.json"
+            }
+        },
+        "action_7370e993dfff14e5e7ddd7f864017cee": {
+            "main": "./lib/actions/action.js",
+            "title": "Deletes a worksheet recurring rule",
+            "callParams": {
+                "pathName": "/plan-it/assignments/recurring-rules/{recurringRuleId}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_7370e993dfff14e5e7ddd7f864017cee.in.json",
+                "out": "./lib/schemas/action_7370e993dfff14e5e7ddd7f864017cee.out.json"
+            }
+        },
+        "action_4d4c123aedeab50fd9cedb818f65eebd": {
+            "main": "./lib/actions/action.js",
+            "title": "Updates a documentation",
+            "callParams": {
+                "pathName": "/plan-it/documentations/{documentationId}",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_4d4c123aedeab50fd9cedb818f65eebd.in.json",
+                "out": "./lib/schemas/action_4d4c123aedeab50fd9cedb818f65eebd.out.json"
+            }
+        },
+        "action_719bce30bacf5802500da4d3c51e1174": {
+            "main": "./lib/actions/action.js",
+            "title": "Updates a signature template",
+            "callParams": {
+                "pathName": "/plan-it/documentations/signatures/{signatureTemplateId}",
+                "method": "put",
+                "requestContentType": "multipart/form-data"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_719bce30bacf5802500da4d3c51e1174.in.json",
+                "out": "./lib/schemas/action_719bce30bacf5802500da4d3c51e1174.out.json"
+            }
+        },
+        "action_23982bde5b93ea0d62c7dbf3fe657d22": {
+            "main": "./lib/actions/action.js",
+            "title": "Returns specific employee group",
+            "callParams": {
+                "pathName": "/plan-it/employees/groups/{groupId}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_23982bde5b93ea0d62c7dbf3fe657d22.in.json",
+                "out": "./lib/schemas/action_23982bde5b93ea0d62c7dbf3fe657d22.out.json"
+            }
+        },
+        "action_5d129bdd4591f827e82fcb25f1c55fdd": {
+            "main": "./lib/actions/action.js",
+            "title": "Remove document",
+            "callParams": {
+                "pathName": "/plan-it/documents/{documentId}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_5d129bdd4591f827e82fcb25f1c55fdd.in.json",
+                "out": "./lib/schemas/action_5d129bdd4591f827e82fcb25f1c55fdd.out.json"
+            }
+        },
+        "action_4e241b4e553261ea8120fe69833f0b41": {
+            "main": "./lib/actions/action.js",
+            "title": "Add new employee group",
+            "callParams": {
+                "pathName": "/plan-it/employees/groups",
+                "method": "post",
+                "requestContentType": "multipart/form-data"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_4e241b4e553261ea8120fe69833f0b41.in.json",
+                "out": "./lib/schemas/action_4e241b4e553261ea8120fe69833f0b41.out.json"
+            }
+        },
+        "ccdf1644631fe372ddb127ac6d7e4b16": {
+            "main": "./lib/actions/action.js",
+            "title": "Remove employee group",
+            "callParams": {
+                "pathName": "/plan-it/employees/groups/{groupId}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/ccdf1644631fe372ddb127ac6d7e4b16.in.json",
+                "out": "./lib/schemas/ccdf1644631fe372ddb127ac6d7e4b16.out.json"
+            }
+        },
+        "action_03726e71d8b27e1ded2cc860b8677027": {
+            "main": "./lib/actions/action.js",
+            "title": "Update employee",
+            "callParams": {
+                "pathName": "/plan-it/employees/{employeeId}",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_03726e71d8b27e1ded2cc860b8677027.in.json",
+                "out": "./lib/schemas/action_03726e71d8b27e1ded2cc860b8677027.out.json"
+            }
+        },
+        "action_4f0f3fda90bbf3a917f03cdfaaaa1615": {
+            "main": "./lib/actions/action.js",
+            "title": "Returns specific icon",
+            "callParams": {
+                "pathName": "/plan-it/icons/{iconId}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_4f0f3fda90bbf3a917f03cdfaaaa1615.in.json",
+                "out": "./lib/schemas/action_4f0f3fda90bbf3a917f03cdfaaaa1615.out.json"
+            }
+        },
+        "b684627fe830bed649ee0eec369a0ca6": {
+            "main": "./lib/actions/action.js",
+            "title": "Returns specific employee",
+            "callParams": {
+                "pathName": "/plan-it/employees/{employeeId}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/b684627fe830bed649ee0eec369a0ca6.in.json",
+                "out": "./lib/schemas/b684627fe830bed649ee0eec369a0ca6.out.json"
+            }
+        },
+        "ea995241508de1a5f216e288db18793d": {
+            "main": "./lib/actions/action.js",
+            "title": "Update employee group",
+            "callParams": {
+                "pathName": "/plan-it/employees/groups/{groupId}",
+                "method": "put",
+                "requestContentType": "multipart/form-data"
+            },
+            "metadata": {
+                "in": "./lib/schemas/ea995241508de1a5f216e288db18793d.in.json",
+                "out": "./lib/schemas/ea995241508de1a5f216e288db18793d.out.json"
+            }
+        },
+        "fb8c948aa378501c3f7926cac2efeb9f": {
+            "main": "./lib/actions/action.js",
+            "title": "Add employee",
+            "callParams": {
+                "pathName": "/plan-it/employees",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/fb8c948aa378501c3f7926cac2efeb9f.in.json",
+                "out": "./lib/schemas/fb8c948aa378501c3f7926cac2efeb9f.out.json"
+            }
+        },
+        "action_90eb5181ad3ab19e556baf55a915ac88": {
+            "main": "./lib/actions/action.js",
+            "title": "Returns a specific desktop notficiation",
+            "callParams": {
+                "pathName": "/plan-it/my/desktop-notifications/{notificationId}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_90eb5181ad3ab19e556baf55a915ac88.in.json",
+                "out": "./lib/schemas/action_90eb5181ad3ab19e556baf55a915ac88.out.json"
+            }
+        },
+        "action_0ec305f360d9d34ef70ff80e2f87f29a": {
+            "main": "./lib/actions/action.js",
+            "title": "Save information of the logged in employee",
+            "callParams": {
+                "pathName": "/plan-it/my/employee",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_0ec305f360d9d34ef70ff80e2f87f29a.in.json",
+                "out": "./lib/schemas/action_0ec305f360d9d34ef70ff80e2f87f29a.out.json"
+            }
+        },
+        "e22d2a7d1ea575b3eb35535bab83c0eb": {
+            "main": "./lib/actions/action.js",
+            "title": "Removes desktop notificiation",
+            "callParams": {
+                "pathName": "/plan-it/my/desktop-notifications/{notificationId}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/e22d2a7d1ea575b3eb35535bab83c0eb.in.json",
+                "out": "./lib/schemas/e22d2a7d1ea575b3eb35535bab83c0eb.out.json"
+            }
+        },
+        "action_9ea6f954eab0ea98b8cab88868de2824": {
+            "main": "./lib/actions/action.js",
+            "title": "Removes all desktop notificiation",
+            "callParams": {
+                "pathName": "/plan-it/my/desktop-notifications",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_9ea6f954eab0ea98b8cab88868de2824.in.json",
+                "out": "./lib/schemas/action_9ea6f954eab0ea98b8cab88868de2824.out.json"
+            }
+        },
+        "action_98e8f15838238f88918f434c99ad757b": {
+            "main": "./lib/actions/action.js",
+            "title": "Add project",
+            "callParams": {
+                "pathName": "/plan-it/projects",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_98e8f15838238f88918f434c99ad757b.in.json",
+                "out": "./lib/schemas/action_98e8f15838238f88918f434c99ad757b.out.json"
+            }
+        },
+        "e095bb9cbf82955a5ea70408318e5e0b": {
+            "main": "./lib/actions/action.js",
+            "title": "Update project",
+            "callParams": {
+                "pathName": "/plan-it/projects/{projectId}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/e095bb9cbf82955a5ea70408318e5e0b.in.json",
+                "out": "./lib/schemas/e095bb9cbf82955a5ea70408318e5e0b.out.json"
+            }
+        },
+        "action_42214b89e50c8f25a6d476d0383fab10": {
+            "main": "./lib/actions/action.js",
+            "title": "Remove article group",
+            "callParams": {
+                "pathName": "/plan-it/articles/groups/{groupId}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_42214b89e50c8f25a6d476d0383fab10.in.json",
+                "out": "./lib/schemas/action_42214b89e50c8f25a6d476d0383fab10.out.json"
+            }
+        },
+        "d24726396abb11039257568b9dfa7a33": {
+            "main": "./lib/actions/action.js",
+            "title": "Updates specific timesheet",
+            "callParams": {
+                "pathName": "/plan-it/timesheets/{timesheetId}",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/d24726396abb11039257568b9dfa7a33.in.json",
+                "out": "./lib/schemas/d24726396abb11039257568b9dfa7a33.out.json"
+            }
+        },
+        "action_44a866ca33d42a1da255f253e8824353": {
+            "main": "./lib/actions/action.js",
+            "title": "Update project",
+            "callParams": {
+                "pathName": "/plan-it/projects/{projectId}",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_44a866ca33d42a1da255f253e8824353.in.json",
+                "out": "./lib/schemas/action_44a866ca33d42a1da255f253e8824353.out.json"
+            }
+        },
+        "action_61f64e50a86d3f0690cfb7a9b1e4fec1": {
+            "main": "./lib/actions/action.js",
+            "title": "Returns specific article",
+            "callParams": {
+                "pathName": "/plan-it/articles/{articleId}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_61f64e50a86d3f0690cfb7a9b1e4fec1.in.json",
+                "out": "./lib/schemas/action_61f64e50a86d3f0690cfb7a9b1e4fec1.out.json"
+            }
+        },
+        "action_9f305a6add351ece6b1900d0aa4a057e": {
+            "main": "./lib/actions/action.js",
+            "title": "Returns specific project",
+            "callParams": {
+                "pathName": "/plan-it/projects/{projectId}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_9f305a6add351ece6b1900d0aa4a057e.in.json",
+                "out": "./lib/schemas/action_9f305a6add351ece6b1900d0aa4a057e.out.json"
+            }
+        },
+        "aae7317fdbdf3f4b9af34f6f333c81c1": {
+            "main": "./lib/actions/action.js",
+            "title": "Remove timesheet",
+            "callParams": {
+                "pathName": "/plan-it/timesheets/{timesheetId}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/aae7317fdbdf3f4b9af34f6f333c81c1.in.json",
+                "out": "./lib/schemas/aae7317fdbdf3f4b9af34f6f333c81c1.out.json"
+            }
+        },
+        "action_5671dbd0f8f03ffea11e815cd7cc118a": {
+            "main": "./lib/actions/action.js",
+            "title": "Returns specific tool group",
+            "callParams": {
+                "pathName": "/plan-it/tools/groups/{groupId}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_5671dbd0f8f03ffea11e815cd7cc118a.in.json",
+                "out": "./lib/schemas/action_5671dbd0f8f03ffea11e815cd7cc118a.out.json"
+            }
+        },
+        "d32207b4f86d48f4a799e232302ec678": {
+            "main": "./lib/actions/action.js",
+            "title": "Add time sheet",
+            "callParams": {
+                "pathName": "/plan-it/timesheets",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/d32207b4f86d48f4a799e232302ec678.in.json",
+                "out": "./lib/schemas/d32207b4f86d48f4a799e232302ec678.out.json"
+            }
+        },
+        "action_1acb3151a3bb68e7f4169dbe9f9db464": {
+            "main": "./lib/actions/action.js",
+            "title": "Returns specific timesheet",
+            "callParams": {
+                "pathName": "/plan-it/timesheets/{timesheetId}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_1acb3151a3bb68e7f4169dbe9f9db464.in.json",
+                "out": "./lib/schemas/action_1acb3151a3bb68e7f4169dbe9f9db464.out.json"
+            }
+        },
+        "action_538cd88563fc0d96d695ba5882b115e3": {
+            "main": "./lib/actions/action.js",
+            "title": "Update tool group",
+            "callParams": {
+                "pathName": "/plan-it/tools/groups/{groupId}",
+                "method": "put",
+                "requestContentType": "multipart/form-data"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_538cd88563fc0d96d695ba5882b115e3.in.json",
+                "out": "./lib/schemas/action_538cd88563fc0d96d695ba5882b115e3.out.json"
+            }
+        },
+        "action_56a0b2126ceed23fc46cde3bcee32dc3": {
+            "main": "./lib/actions/action.js",
+            "title": "Remove tool group",
+            "callParams": {
+                "pathName": "/plan-it/tools/groups/{groupId}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_56a0b2126ceed23fc46cde3bcee32dc3.in.json",
+                "out": "./lib/schemas/action_56a0b2126ceed23fc46cde3bcee32dc3.out.json"
+            }
+        },
+        "action_83f9492941334ec42f650a73592053e8": {
+            "main": "./lib/actions/action.js",
+            "title": "Remove tool",
+            "callParams": {
+                "pathName": "/plan-it/tools/{toolId}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_83f9492941334ec42f650a73592053e8.in.json",
+                "out": "./lib/schemas/action_83f9492941334ec42f650a73592053e8.out.json"
+            }
+        },
+        "a5d57d2d518d8127683101a5f47bf480": {
+            "main": "./lib/actions/action.js",
+            "title": "Returns specific vehicle",
+            "callParams": {
+                "pathName": "/plan-it/vehicles/{vehicleId}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/a5d57d2d518d8127683101a5f47bf480.in.json",
+                "out": "./lib/schemas/a5d57d2d518d8127683101a5f47bf480.out.json"
+            }
+        },
+        "action_60e8c40014d5efdf70e8ed9bdb0b79ad": {
+            "main": "./lib/actions/action.js",
+            "title": "Returns specific tool",
+            "callParams": {
+                "pathName": "/plan-it/tools/{toolId}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_60e8c40014d5efdf70e8ed9bdb0b79ad.in.json",
+                "out": "./lib/schemas/action_60e8c40014d5efdf70e8ed9bdb0b79ad.out.json"
+            }
+        },
+        "fcabb69f519db1e0fd0e2f1d700b9b48": {
+            "main": "./lib/actions/action.js",
+            "title": "Update tool",
+            "callParams": {
+                "pathName": "/plan-it/tools/{toolId}",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/fcabb69f519db1e0fd0e2f1d700b9b48.in.json",
+                "out": "./lib/schemas/fcabb69f519db1e0fd0e2f1d700b9b48.out.json"
+            }
+        },
+        "e39a898316b18a797ffd5a01ef93d073": {
+            "main": "./lib/actions/action.js",
+            "title": "Updates vehicle",
+            "callParams": {
+                "pathName": "/plan-it/vehicles/{vehicleId}",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/e39a898316b18a797ffd5a01ef93d073.in.json",
+                "out": "./lib/schemas/e39a898316b18a797ffd5a01ef93d073.out.json"
+            }
+        },
+        "action_3b9dd2094a646a46b7003ce0a684baa7": {
+            "main": "./lib/actions/action.js",
+            "title": "Returns specific upload",
+            "callParams": {
+                "pathName": "/plan-it/uploads/{uploadId}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_3b9dd2094a646a46b7003ce0a684baa7.in.json",
+                "out": "./lib/schemas/action_3b9dd2094a646a46b7003ce0a684baa7.out.json"
+            }
+        },
+        "aa233b92133d0941d29d24faadb8bf34": {
+            "main": "./lib/actions/action.js",
+            "title": "Add new tool",
+            "callParams": {
+                "pathName": "/plan-it/tools",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/aa233b92133d0941d29d24faadb8bf34.in.json",
+                "out": "./lib/schemas/aa233b92133d0941d29d24faadb8bf34.out.json"
+            }
+        },
+        "bc6dedfb444bfaea6f13a1d55c6f5938": {
+            "main": "./lib/actions/action.js",
+            "title": "Updates a worksheet recurring rule",
+            "callParams": {
+                "pathName": "/plan-it/assignments/recurring-rules/{recurringRuleId}",
+                "method": "put",
+                "requestContentType": "multipart/form-data"
+            },
+            "metadata": {
+                "in": "./lib/schemas/bc6dedfb444bfaea6f13a1d55c6f5938.in.json",
+                "out": "./lib/schemas/bc6dedfb444bfaea6f13a1d55c6f5938.out.json"
+            }
+        },
+        "action_46072d08b3b828732e2bb3b0b88ae21c": {
+            "main": "./lib/actions/action.js",
+            "title": "Add new tool group",
+            "callParams": {
+                "pathName": "/plan-it/tools/groups",
+                "method": "post",
+                "requestContentType": "multipart/form-data"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_46072d08b3b828732e2bb3b0b88ae21c.in.json",
+                "out": "./lib/schemas/action_46072d08b3b828732e2bb3b0b88ae21c.out.json"
+            }
+        },
+        "action_9b0cca8f3324ad456cb21150759bfb4c": {
+            "main": "./lib/actions/action.js",
+            "title": "Add worksheet",
+            "callParams": {
+                "pathName": "/plan-it/assignments",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_9b0cca8f3324ad456cb21150759bfb4c.in.json",
+                "out": "./lib/schemas/action_9b0cca8f3324ad456cb21150759bfb4c.out.json"
+            }
+        },
+        "action_48b249e2df5179eaeb212fc2a294cb59": {
+            "main": "./lib/actions/action.js",
+            "title": "Add new signature template",
+            "callParams": {
+                "pathName": "/plan-it/documentations/signatures",
+                "method": "post",
+                "requestContentType": "multipart/form-data"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_48b249e2df5179eaeb212fc2a294cb59.in.json",
+                "out": "./lib/schemas/action_48b249e2df5179eaeb212fc2a294cb59.out.json"
+            }
+        },
+        "action_90fe90e8115ea5c32ebb8b067770e8e4": {
+            "main": "./lib/actions/action.js",
+            "title": "Remove employee",
+            "callParams": {
+                "pathName": "/plan-it/employees/{employeeId}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_90fe90e8115ea5c32ebb8b067770e8e4.in.json",
+                "out": "./lib/schemas/action_90fe90e8115ea5c32ebb8b067770e8e4.out.json"
+            }
+        },
+        "a5632b9716ed7fc332a89aef3ef928a7": {
+            "main": "./lib/actions/action.js",
+            "title": "Add customer",
+            "callParams": {
+                "pathName": "/plan-it/customers",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/a5632b9716ed7fc332a89aef3ef928a7.in.json",
+                "out": "./lib/schemas/a5632b9716ed7fc332a89aef3ef928a7.out.json"
+            }
+        },
+        "action_089daa4e6a25a30aa320cd12b6ca2112": {
+            "main": "./lib/actions/action.js",
+            "title": "Remove vehicle",
+            "callParams": {
+                "pathName": "/plan-it/vehicles/{vehicleId}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_089daa4e6a25a30aa320cd12b6ca2112.in.json",
+                "out": "./lib/schemas/action_089daa4e6a25a30aa320cd12b6ca2112.out.json"
+            }
+        },
+        "f36dc79b3a4058201a8c6d6c080d35fc": {
+            "main": "./lib/actions/action.js",
+            "title": "Marks all desktop notificiation as read",
+            "callParams": {
+                "pathName": "/plan-it/my/desktop-notifications/mark-read",
+                "method": "put"
+            },
+            "metadata": {
+                "in": "./lib/schemas/f36dc79b3a4058201a8c6d6c080d35fc.in.json",
+                "out": "./lib/schemas/f36dc79b3a4058201a8c6d6c080d35fc.out.json"
+            }
+        },
+        "action_93870602795c38b14702d7d7fd2d7da6": {
+            "main": "./lib/actions/action.js",
+            "title": "Add vehicle",
+            "callParams": {
+                "pathName": "/plan-it/vehicles",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/action_93870602795c38b14702d7d7fd2d7da6.in.json",
+                "out": "./lib/schemas/action_93870602795c38b14702d7d7fd2d7da6.out.json"
+            }
+        },
+        "d0e145508eee234d0b4e608c86e1506b": {
+            "main": "./lib/actions/action.js",
+            "title": "Returns specific documentation",
+            "callParams": {
+                "pathName": "/plan-it/documentations/{documentationId}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/d0e145508eee234d0b4e608c86e1506b.in.json",
+                "out": "./lib/schemas/d0e145508eee234d0b4e608c86e1506b.out.json"
+            }
+        }
+    }
+}

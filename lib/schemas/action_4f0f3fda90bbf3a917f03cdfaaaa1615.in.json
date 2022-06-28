@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "iconId": {
+            "required": true,
+            "type": "integer"
+        }
+    }
+}

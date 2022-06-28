@@ -1,0 +1,35 @@
+{
+    "type": "object",
+    "properties": {
+        "groupId": {
+            "required": true,
+            "type": "integer"
+        },
+        "requestBody": {
+            "title": "UpdateEmployeeGroupRequest",
+            "properties": {
+                "name": {
+                    "title": "name",
+                    "description": "Employee Group Name",
+                    "type": "string"
+                },
+                "color": {
+                    "title": "color",
+                    "description": "Group color",
+                    "type": "string"
+                },
+                "source": {
+                    "title": "source",
+                    "description": "The group source",
+                    "type": "string"
+                },
+                "source_external_id": {
+                    "title": "source_external_id",
+                    "description": "The group source_external_id",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}
