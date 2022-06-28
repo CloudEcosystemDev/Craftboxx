@@ -1,0 +1,311 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "title": "StoreAssignmentRequest",
+            "required": [
+                "title",
+                "project_id"
+            ],
+            "type": "object",
+            "allOf": [
+                {
+                    "title": "UpdateAssignmentRequest",
+                    "properties": {
+                        "customer_address_id": {
+                            "title": "customer_address_id",
+                            "description": "The assignment customer addressid id",
+                            "type": "integer"
+                        },
+                        "title": {
+                            "title": "title",
+                            "description": "The assignment title",
+                            "type": "string"
+                        },
+                        "description": {
+                            "title": "description",
+                            "description": "The assignment description",
+                            "type": "string"
+                        },
+                        "to_be_documented": {
+                            "title": "to_be_documented",
+                            "description": "The assignment 'to be documented info' ",
+                            "type": "string"
+                        },
+                        "internal_info": {
+                            "title": "internal_info",
+                            "description": "The assignment 'internal plan it note'",
+                            "type": "string"
+                        },
+                        "site_notes": {
+                            "title": "site_notes",
+                            "description": "The assignment 'important hint'",
+                            "type": "string"
+                        },
+                        "state": {
+                            "title": "state",
+                            "description": "Assignment state",
+                            "type": "string",
+                            "enum": [
+                                [
+                                    "UNPLANNED",
+                                    "SCHEDULED",
+                                    "IN_PROGRESS",
+                                    "DELAYED",
+                                    "DONE"
+                                ]
+                            ]
+                        },
+                        "all_day": {
+                            "title": "all_day",
+                            "description": "The assignment all_day",
+                            "type": "boolean"
+                        },
+                        "start": {
+                            "title": "start",
+                            "description": "The assignment start",
+                            "type": "string",
+                            "format": "date-time"
+                        },
+                        "end": {
+                            "title": "end",
+                            "description": "The assignment end",
+                            "type": "string",
+                            "format": "date-time"
+                        },
+                        "source": {
+                            "title": "source",
+                            "description": "The assignment source",
+                            "type": "string"
+                        },
+                        "source_external_id": {
+                            "title": "source_external_id",
+                            "description": "The assignment source_external_id",
+                            "type": "string"
+                        },
+                        "employees": {
+                            "title": "employees",
+                            "description": "List of employee ids attached to this worksheet",
+                            "type": "array",
+                            "items": {
+                                "type": "integer"
+                            },
+                            "example": [
+                                1,
+                                2,
+                                3
+                            ]
+                        },
+                        "vehicles": {
+                            "title": "vehicles",
+                            "description": "List of vehicle ids attached to this worksheet",
+                            "type": "array",
+                            "items": {
+                                "type": "integer"
+                            },
+                            "example": [
+                                1,
+                                2,
+                                3
+                            ]
+                        },
+                        "tools": {
+                            "title": "tools",
+                            "description": "List of tool ids attached to this worksheet",
+                            "type": "array",
+                            "items": {
+                                "type": "integer"
+                            },
+                            "example": [
+                                1,
+                                2,
+                                3
+                            ]
+                        },
+                        "documents": {
+                            "title": "documents",
+                            "description": "List of document ids attached to this worksheet",
+                            "type": "array",
+                            "items": {
+                                "type": "integer"
+                            },
+                            "example": [
+                                1,
+                                2,
+                                3
+                            ]
+                        },
+                        "assignment_tags": {
+                            "title": "assignment_tags",
+                            "description": "List of label (assignment_tags) ids attached to this worksheet",
+                            "type": "array",
+                            "items": {
+                                "type": "integer"
+                            },
+                            "example": [
+                                1,
+                                2,
+                                3
+                            ]
+                        },
+                        "articles": {
+                            "title": "articles",
+                            "description": "Articles, use index keys as article id and assign a subarray with key amount",
+                            "type": "array",
+                            "items": {
+                                "type": "array",
+                                "items": {
+                                    "properties": {
+                                        "amount": {
+                                            "description": "Planned amount of this article",
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            },
+                            "example": {
+                                "2": {
+                                    "amount": 16
+                                },
+                                "47": {
+                                    "amount": 10
+                                },
+                                "60": {
+                                    "amount": 4
+                                }
+                            }
+                        }
+                    },
+                    "type": "object"
+                },
+                {
+                    "properties": {
+                        "project_id": {
+                            "title": "project_id",
+                            "description": "The assignment project id",
+                            "type": "integer"
+                        },
+                        "customer_address_id": {
+                            "title": "customer_address_id",
+                            "description": "The assignment customer addressid id",
+                            "type": "integer"
+                        },
+                        "title": {
+                            "title": "title",
+                            "description": "The assignment title",
+                            "type": "string"
+                        },
+                        "description": {
+                            "title": "description",
+                            "description": "The assignment description",
+                            "type": "string"
+                        },
+                        "to_be_documented": {
+                            "title": "to_be_documented",
+                            "description": "The assignment 'to be documented info' ",
+                            "type": "string"
+                        },
+                        "internal_info": {
+                            "title": "internal_info",
+                            "description": "The assignment 'internal plan it note'",
+                            "type": "string"
+                        },
+                        "site_notes": {
+                            "title": "site_notes",
+                            "description": "The assignment 'important hint'",
+                            "type": "string"
+                        },
+                        "state": {
+                            "title": "state",
+                            "description": "Assignment state",
+                            "type": "string",
+                            "enum": [
+                                [
+                                    "UNPLANNED",
+                                    "SCHEDULED",
+                                    "IN_PROGRESS",
+                                    "DELAYED",
+                                    "DONE"
+                                ]
+                            ]
+                        },
+                        "all_day": {
+                            "title": "all_day",
+                            "description": "The assignment all_day",
+                            "type": "boolean"
+                        },
+                        "start": {
+                            "title": "start",
+                            "description": "The assignment start",
+                            "type": "string",
+                            "format": "date-time"
+                        },
+                        "end": {
+                            "title": "end",
+                            "description": "The assignment end",
+                            "type": "string"
+                        },
+                        "employees": {
+                            "title": "employees",
+                            "description": "List of employee ids attached to this worksheet",
+                            "type": "array",
+                            "items": {
+                                "type": "integer"
+                            }
+                        },
+                        "vehicles": {
+                            "title": "vehicles",
+                            "description": "List of vehicle ids attached to this worksheet",
+                            "type": "array",
+                            "items": {
+                                "type": "integer"
+                            }
+                        },
+                        "tools": {
+                            "title": "tools",
+                            "description": "List of tool ids attached to this worksheet",
+                            "type": "array",
+                            "items": {
+                                "type": "integer"
+                            }
+                        },
+                        "documents": {
+                            "title": "documents",
+                            "description": "List of document ids attached to this worksheet",
+                            "type": "array",
+                            "items": {
+                                "type": "integer"
+                            }
+                        },
+                        "assignment_tags": {
+                            "title": "assignment_tags",
+                            "description": "List of label (assignment_tags) ids attached to this worksheet",
+                            "type": "array",
+                            "items": {
+                                "type": "integer"
+                            }
+                        },
+                        "articles": {
+                            "title": "articles",
+                            "description": "Articles, use index keys as article id and assign a subarray with key amount",
+                            "type": "array",
+                            "items": {
+                                "type": "array",
+                                "items": {
+                                    "properties": {
+                                        "amount": {
+                                            "description": "Planned amount of this article",
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

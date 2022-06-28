@@ -1,0 +1,138 @@
+{
+    "type": "object",
+    "properties": {
+        "articleId": {
+            "required": true,
+            "type": "integer"
+        },
+        "requestBody": {
+            "title": "UpdateArticleRequest",
+            "properties": {
+                "name": {
+                    "title": "name",
+                    "description": "Article name",
+                    "type": "string"
+                },
+                "manufacturer": {
+                    "title": "manufacturer",
+                    "description": "Article manufacturer",
+                    "type": "string"
+                },
+                "manufacturer_article_nr": {
+                    "title": "manufacturer_article_nr",
+                    "description": "Article manufacturer number",
+                    "type": "string"
+                },
+                "ean": {
+                    "title": "ean",
+                    "description": "Article EAN",
+                    "type": "string"
+                },
+                "supplier_article_nr": {
+                    "title": "supplier_article_nr",
+                    "description": "Supplier article number",
+                    "type": "string"
+                },
+                "unit_price": {
+                    "title": "unit_price",
+                    "description": "Price",
+                    "type": "number",
+                    "format": "float",
+                    "example": 2.5
+                },
+                "currency": {
+                    "title": "currency",
+                    "description": "Currency",
+                    "type": "string",
+                    "enum": [
+                        [
+                            "€",
+                            "$"
+                        ]
+                    ]
+                },
+                "unit": {
+                    "title": "unit",
+                    "description": "Unit",
+                    "type": "string",
+                    "enum": [
+                        [
+                            "PIECE",
+                            "KILOGRAMS",
+                            "METRES",
+                            "BUNCH",
+                            "BOTTLE",
+                            "BOX",
+                            "BAG",
+                            "FLAT_FEE",
+                            "CANE",
+                            "DOZEN",
+                            "BUCKET",
+                            "TRIMMING",
+                            "SET",
+                            "CANISTER",
+                            "CARDBOARD",
+                            "LITRE",
+                            "SQUAREMETER",
+                            "PAIR",
+                            "PACK",
+                            "PARCEL",
+                            "PANEL",
+                            "ROLL",
+                            "SAC",
+                            "BAR",
+                            "TUBE",
+                            "HOURS",
+                            "TONS",
+                            "CUBIC_METRE"
+                        ]
+                    ]
+                },
+                "price_date": {
+                    "title": "price_date",
+                    "description": "From(price date)",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "article_url": {
+                    "title": "article_url",
+                    "description": "Article url",
+                    "type": "string"
+                },
+                "info": {
+                    "title": "info",
+                    "description": "Description",
+                    "type": "string"
+                },
+                "dangerous_material": {
+                    "title": "dangerous_material",
+                    "description": "Is it dangerous material?",
+                    "type": "boolean"
+                },
+                "group_id": {
+                    "title": "group_id",
+                    "description": "Group id",
+                    "type": "integer"
+                },
+                "used": {
+                    "title": "used",
+                    "description": "Amount of used material",
+                    "type": "number",
+                    "format": "float",
+                    "example": 0.5
+                },
+                "source": {
+                    "title": "source",
+                    "description": "The article source",
+                    "type": "string"
+                },
+                "source_external_id": {
+                    "title": "source_external_id",
+                    "description": "The article source_external_id",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

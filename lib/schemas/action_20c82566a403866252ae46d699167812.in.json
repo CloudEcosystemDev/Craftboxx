@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "absenceId": {
+            "required": true,
+            "type": "integer"
+        }
+    }
+}

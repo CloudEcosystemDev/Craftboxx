@@ -1,0 +1,89 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "title": "StoreAbsenceRequest",
+            "type": "object",
+            "allOf": [
+                {
+                    "title": "UpdateAbsenceRequest",
+                    "type": "object",
+                    "allOf": [
+                        {
+                            "title": "SchedulableRequest",
+                            "required": [
+                                "start",
+                                "end"
+                            ],
+                            "properties": {
+                                "start": {
+                                    "title": "start",
+                                    "description": "Start date",
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "end": {
+                                    "title": "end",
+                                    "description": "End date",
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "all_day": {
+                                    "title": "all_day",
+                                    "description": "Is it allday or not?",
+                                    "type": "boolean"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        {
+                            "properties": {
+                                "type": {
+                                    "title": "type",
+                                    "description": "Absence type id",
+                                    "type": "integer"
+                                },
+                                "employees": {
+                                    "title": "employees",
+                                    "description": "Employees ids",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer"
+                                    },
+                                    "example": [
+                                        1,
+                                        2,
+                                        3
+                                    ]
+                                },
+                                "users": {
+                                    "title": "users",
+                                    "description": "Users ids",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer"
+                                    },
+                                    "example": [
+                                        1,
+                                        2,
+                                        3
+                                    ]
+                                },
+                                "source": {
+                                    "title": "source",
+                                    "description": "The absence source",
+                                    "type": "string"
+                                },
+                                "source_external_id": {
+                                    "title": "source_external_id",
+                                    "description": "The absence source_external_id",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

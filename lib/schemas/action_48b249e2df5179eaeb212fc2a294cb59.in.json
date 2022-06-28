@@ -1,0 +1,54 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "title": "StoreDocumentationSignatureRequest",
+            "required": [
+                "text"
+            ],
+            "type": "object",
+            "allOf": [
+                {
+                    "title": "UpdateDocumentationSignatureRequest",
+                    "properties": {
+                        "text": {
+                            "title": "text",
+                            "description": "Signature template text",
+                            "type": "string"
+                        },
+                        "attachment_possible": {
+                            "title": "attachment_possible",
+                            "description": "Should it be allowed to add a attachment to the signature?",
+                            "type": "boolean"
+                        },
+                        "source": {
+                            "title": "source",
+                            "description": "The signature source",
+                            "type": "string"
+                        },
+                        "source_external_id": {
+                            "title": "source_external_id",
+                            "description": "The signature source_external_id",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                {
+                    "properties": {
+                        "text": {
+                            "title": "text",
+                            "description": "Signature template text",
+                            "type": "string"
+                        },
+                        "attachment_possible": {
+                            "title": "attachment_possible",
+                            "description": "Should it be allowed to add a attachment to the signature?",
+                            "type": "boolean"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

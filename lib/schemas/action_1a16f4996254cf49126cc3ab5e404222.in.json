@@ -1,0 +1,56 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "title": "StoreAssignmentRecurringRuleRequest",
+            "required": [
+                "template_id",
+                "start",
+                "interval"
+            ],
+            "type": "object",
+            "allOf": [
+                {
+                    "title": "UpdateAssignmentRecurringRuleRequest",
+                    "properties": {
+                        "end": {
+                            "title": "end",
+                            "description": "The end of the recurring rule",
+                            "type": "string"
+                        },
+                        "template_id": {
+                            "title": "template_id",
+                            "description": "The template for creating new worksheet for the recurring rule",
+                            "type": "integer"
+                        },
+                        "source": {
+                            "title": "source",
+                            "description": "The recurring rule source",
+                            "type": "string"
+                        },
+                        "source_external_id": {
+                            "title": "source_external_id",
+                            "description": "The recurring rule source_external_id",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                {
+                    "properties": {
+                        "template_id": {
+                            "title": "template_id",
+                            "description": "The template for creating new worksheet for the recurring rule",
+                            "type": "integer"
+                        },
+                        "end": {
+                            "title": "end",
+                            "description": "The end of the recurring rule",
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "type": "object",
+    "properties": {
+        "labelId": {
+            "required": true,
+            "type": "integer"
+        },
+        "requestBody": {
+            "title": "UpdateAssignmentTagRequest",
+            "properties": {
+                "custom_icon_id": {
+                    "title": "custom_icon_id",
+                    "description": "The label icon id, leave null for default",
+                    "type": "integer"
+                },
+                "name": {
+                    "title": "name",
+                    "description": "The label name",
+                    "type": "string"
+                },
+                "color": {
+                    "title": "color",
+                    "description": "The label color in hex format starting including #",
+                    "type": "string"
+                },
+                "source": {
+                    "title": "source",
+                    "description": "The tag source",
+                    "type": "string"
+                },
+                "source_external_id": {
+                    "title": "source_external_id",
+                    "description": "The tag source_external_id",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

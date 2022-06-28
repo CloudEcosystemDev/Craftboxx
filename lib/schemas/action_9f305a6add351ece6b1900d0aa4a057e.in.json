@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "projectId": {
+            "required": true,
+            "type": "integer"
+        }
+    }
+}

@@ -1,0 +1,75 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "title": "StoreDocumentRequest",
+            "required": [
+                "title",
+                "upload"
+            ],
+            "type": "object",
+            "allOf": [
+                {
+                    "title": "UpdateDocumentRequest",
+                    "properties": {
+                        "title": {
+                            "title": "title",
+                            "description": "Document title",
+                            "type": "string"
+                        },
+                        "upload": {
+                            "description": "Upload file. PLEASE ADD _method=put parameter and change method to POST, if you send file uploads (PHP issue. More info: https://stackoverflow.com/questions/39942670/how-to-send-put-request-with-a-file-and-an-array-of-data-in-laravel)",
+                            "type": "string",
+                            "format": "binary"
+                        },
+                        "type": {
+                            "title": "type",
+                            "description": "Document type (GLOBAL or ASSIGNMENT)",
+                            "type": "string"
+                        },
+                        "info": {
+                            "title": "info",
+                            "description": "Document info",
+                            "type": "string"
+                        },
+                        "source": {
+                            "title": "source",
+                            "description": "The document source",
+                            "type": "string"
+                        },
+                        "source_external_id": {
+                            "title": "source_external_id",
+                            "description": "The document source_external_id",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                {
+                    "properties": {
+                        "title": {
+                            "title": "title",
+                            "description": "Document title",
+                            "type": "string"
+                        },
+                        "upload": {
+                            "description": "Upload file",
+                            "type": "string",
+                            "format": "binary"
+                        },
+                        "type": {
+                            "title": "type",
+                            "description": "Document type (GLOBAL or ASSIGNMENT)",
+                            "type": "string"
+                        },
+                        "info": {
+                            "title": "info",
+                            "description": "Document info",
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

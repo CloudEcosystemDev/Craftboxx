@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "documentId": {
+            "required": true,
+            "type": "integer"
+        }
+    }
+}

@@ -1,0 +1,148 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "title": "StoreVehicleRequest",
+            "required": [
+                "model"
+            ],
+            "type": "object",
+            "allOf": [
+                {
+                    "title": "UpdateVehicleRequest",
+                    "properties": {
+                        "manufacturer": {
+                            "title": "manufacturer",
+                            "description": "Tool manufacturer",
+                            "type": "string"
+                        },
+                        "model": {
+                            "title": "model",
+                            "description": "Tool model",
+                            "type": "string"
+                        },
+                        "registration_number": {
+                            "title": "registration_number",
+                            "description": "Registration number",
+                            "type": "string"
+                        },
+                        "license_plate": {
+                            "title": "license_plate",
+                            "description": "License plate",
+                            "type": "string"
+                        },
+                        "date_of_purchase": {
+                            "title": "date_of_purchase",
+                            "description": "Date of purchase",
+                            "type": "string",
+                            "format": "date"
+                        },
+                        "next_maintenance": {
+                            "title": "next_maintenance",
+                            "description": "Next maintenance date",
+                            "type": "string",
+                            "format": "date"
+                        },
+                        "mot_expires": {
+                            "title": "mot_expires",
+                            "description": "When does the MOT expire? (german TÜV)",
+                            "type": "string",
+                            "format": "date"
+                        },
+                        "condition": {
+                            "title": "condition",
+                            "description": "Vehicle condition",
+                            "type": "string",
+                            "enum": [
+                                [
+                                    "NEW",
+                                    "USED",
+                                    "LEASED",
+                                    "DEFECT",
+                                    "SORTED_OUT"
+                                ]
+                            ]
+                        },
+                        "info": {
+                            "title": "info",
+                            "description": "Information",
+                            "type": "string"
+                        },
+                        "source": {
+                            "title": "source",
+                            "description": "The project source",
+                            "type": "string"
+                        },
+                        "source_external_id": {
+                            "title": "source_external_id",
+                            "description": "The project source_external_id",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                {
+                    "properties": {
+                        "manufacturer": {
+                            "title": "manufacturer",
+                            "description": "Tool manufacturer",
+                            "type": "string"
+                        },
+                        "model": {
+                            "title": "model",
+                            "description": "Tool model",
+                            "type": "string"
+                        },
+                        "registration_number": {
+                            "title": "registration_number",
+                            "description": "Registration number",
+                            "type": "string"
+                        },
+                        "license_plate": {
+                            "title": "license_plate",
+                            "description": "License plate",
+                            "type": "string"
+                        },
+                        "date_of_purchase": {
+                            "title": "date_of_purchase",
+                            "description": "Date of purchase",
+                            "type": "string",
+                            "format": "date"
+                        },
+                        "next_maintenance": {
+                            "title": "next_maintenance",
+                            "description": "Next maintenance date",
+                            "type": "string",
+                            "format": "date"
+                        },
+                        "mot_expires": {
+                            "title": "mot_expires",
+                            "description": "When does the MOT expire? (german TÜV)",
+                            "type": "string",
+                            "format": "date"
+                        },
+                        "condition": {
+                            "title": "condition",
+                            "description": "Vehicle condition",
+                            "type": "string",
+                            "enum": [
+                                [
+                                    "NEW",
+                                    "USED",
+                                    "LEASED",
+                                    "DEFECT",
+                                    "SORTED_OUT"
+                                ]
+                            ]
+                        },
+                        "info": {
+                            "title": "info",
+                            "description": "Information",
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

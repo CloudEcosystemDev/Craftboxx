@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "start": {
+            "required": true,
+            "type": "string"
+        },
+        "end": {
+            "required": true,
+            "type": "string"
+        },
+        "exclude": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

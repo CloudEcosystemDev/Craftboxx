@@ -1,0 +1,75 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "title": "StoreAbsenceTypeRequest",
+            "required": [
+                "name",
+                "color"
+            ],
+            "type": "object",
+            "allOf": [
+                {
+                    "title": "UpdateAbsenceTypeRequest",
+                    "properties": {
+                        "name": {
+                            "title": "name",
+                            "description": "The name of the absence type",
+                            "type": "string"
+                        },
+                        "color": {
+                            "title": "color",
+                            "description": "The color of the absence type. Use #FFEEFF Hex format",
+                            "type": "string"
+                        },
+                        "group": {
+                            "title": "group",
+                            "description": "The group of the absence type. Values: holiday, sick, null",
+                            "type": "string"
+                        },
+                        "custom_icon_id": {
+                            "title": "custom_icon_id",
+                            "description": "The icon id",
+                            "type": "string"
+                        },
+                        "source": {
+                            "title": "source",
+                            "description": "The type source",
+                            "type": "string"
+                        },
+                        "source_external_id": {
+                            "title": "source_external_id",
+                            "description": "The type source_external_id",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                {
+                    "properties": {
+                        "name": {
+                            "title": "name",
+                            "description": "The name of the absence type",
+                            "type": "string"
+                        },
+                        "color": {
+                            "title": "color",
+                            "description": "The color of the absence type. Use #FFEEFF Hex format",
+                            "type": "string"
+                        },
+                        "group": {
+                            "title": "group",
+                            "description": "The group of the absence type. Values: holiday, sick, null",
+                            "type": "string"
+                        },
+                        "custom_icon_id": {
+                            "title": "custom_icon_id",
+                            "description": "The icon id",
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

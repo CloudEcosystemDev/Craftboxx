@@ -1,0 +1,45 @@
+{
+    "type": "object",
+    "properties": {
+        "customerId": {
+            "required": true,
+            "type": "integer"
+        },
+        "requestBody": {
+            "title": "UpdateCustomerRequest",
+            "properties": {
+                "name": {
+                    "title": "name",
+                    "description": "The customer name",
+                    "type": "string"
+                },
+                "name_addon": {
+                    "title": "name_addon",
+                    "description": "The customer name addon",
+                    "type": "string"
+                },
+                "customer_number": {
+                    "title": "customer_number",
+                    "description": "The customer number",
+                    "type": "string"
+                },
+                "info": {
+                    "title": "info",
+                    "description": "The customer info",
+                    "type": "string"
+                },
+                "source": {
+                    "title": "source",
+                    "description": "The customer source",
+                    "type": "string"
+                },
+                "source_external_id": {
+                    "title": "source_external_id",
+                    "description": "The customer source external id",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "uploadId": {
+            "required": true,
+            "type": "integer"
+        }
+    }
+}

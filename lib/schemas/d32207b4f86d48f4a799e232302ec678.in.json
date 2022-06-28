@@ -1,0 +1,86 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "title": "StoreTimesheetRequest",
+            "required": [
+                "start",
+                "employee_id"
+            ],
+            "type": "object",
+            "allOf": [
+                {
+                    "title": "UpdateTimesheetRequest",
+                    "properties": {
+                        "end": {
+                            "title": "end",
+                            "description": "Time sheet end date",
+                            "type": "string",
+                            "format": "date-time",
+                            "nullable": false
+                        },
+                        "working_time": {
+                            "title": "working_time",
+                            "description": "Time sheet working time(minutes)",
+                            "type": "integer",
+                            "nullable": true
+                        },
+                        "break_time": {
+                            "title": "break_time",
+                            "description": "Time sheet break time(minutes)",
+                            "type": "integer",
+                            "nullable": true
+                        },
+                        "source": {
+                            "title": "source",
+                            "description": "The timesheet source",
+                            "type": "string"
+                        },
+                        "source_external_id": {
+                            "title": "source_external_id",
+                            "description": "The timesheet source_external_id",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                {
+                    "properties": {
+                        "start": {
+                            "title": "start",
+                            "description": "Time sheet start date",
+                            "type": "string",
+                            "format": "date-time",
+                            "nullable": false
+                        },
+                        "end": {
+                            "title": "end",
+                            "description": "Time sheet end date",
+                            "type": "string",
+                            "format": "date-time",
+                            "nullable": false
+                        },
+                        "working_time": {
+                            "title": "working_time",
+                            "description": "Time sheet working time(minutes)",
+                            "type": "integer",
+                            "nullable": true
+                        },
+                        "break_time": {
+                            "title": "break_time",
+                            "description": "Time sheet break time(minutes)",
+                            "type": "integer",
+                            "nullable": true
+                        },
+                        "employee_id": {
+                            "title": "employee_id",
+                            "description": "Employee id",
+                            "type": "integer",
+                            "nullable": true
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

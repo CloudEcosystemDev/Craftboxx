@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "toolId": {
+            "required": true,
+            "type": "integer"
+        }
+    }
+}

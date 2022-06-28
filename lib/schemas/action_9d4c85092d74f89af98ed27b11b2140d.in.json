@@ -1,0 +1,35 @@
+{
+    "type": "object",
+    "properties": {
+        "recurringRuleId": {
+            "required": true,
+            "type": "integer"
+        },
+        "requestBody": {
+            "title": "UpdateAbsenceRecurringRuleRequest",
+            "properties": {
+                "end": {
+                    "title": "end",
+                    "description": "The end of the recurring rule",
+                    "type": "string"
+                },
+                "template_id": {
+                    "title": "template_id",
+                    "description": "The template for creating new worksheets of the recurring rule",
+                    "type": "integer"
+                },
+                "source": {
+                    "title": "source",
+                    "description": "The recurring rule source",
+                    "type": "string"
+                },
+                "source_external_id": {
+                    "title": "source_external_id",
+                    "description": "The recurring rule source_external_id",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

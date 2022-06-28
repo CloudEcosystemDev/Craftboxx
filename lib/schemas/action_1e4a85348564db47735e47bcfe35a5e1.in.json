@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "title": "AuthRequest",
+            "properties": {
+                "email": {
+                    "title": "email",
+                    "description": "email",
+                    "type": "string"
+                },
+                "password": {
+                    "title": "password",
+                    "description": "password",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "timesheetId": {
+            "required": true,
+            "type": "integer"
+        }
+    }
+}

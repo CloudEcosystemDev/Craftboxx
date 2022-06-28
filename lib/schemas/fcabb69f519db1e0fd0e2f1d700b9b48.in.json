@@ -1,0 +1,71 @@
+{
+    "type": "object",
+    "properties": {
+        "toolId": {
+            "required": true,
+            "type": "integer"
+        },
+        "requestBody": {
+            "title": "UpdateToolRequest",
+            "properties": {
+                "manufacturer": {
+                    "title": "manufacturer",
+                    "description": "Tool manufacturer",
+                    "type": "string"
+                },
+                "model": {
+                    "title": "model",
+                    "description": "Tool model",
+                    "type": "string"
+                },
+                "serial_number": {
+                    "title": "serial_number",
+                    "description": "Tool serial number",
+                    "type": "string"
+                },
+                "condition": {
+                    "title": "condition",
+                    "description": "Tool condition",
+                    "type": "string",
+                    "enum": [
+                        [
+                            "NEW",
+                            "USED",
+                            "LEASED",
+                            "DEFECT",
+                            "SORTED_OUT"
+                        ]
+                    ]
+                },
+                "date_of_purchase": {
+                    "title": "date_of_purchase",
+                    "description": "Date of purchase",
+                    "type": "string",
+                    "format": "date"
+                },
+                "next_maintenance": {
+                    "title": "next_maintenance",
+                    "description": "Next maintenance date",
+                    "type": "string",
+                    "format": "date"
+                },
+                "group_id": {
+                    "title": "group_id",
+                    "description": "Tool group id",
+                    "type": "integer"
+                },
+                "source": {
+                    "title": "source",
+                    "description": "The tool source",
+                    "type": "string"
+                },
+                "source_external_id": {
+                    "title": "source_external_id",
+                    "description": "The tool source_external_id",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}
