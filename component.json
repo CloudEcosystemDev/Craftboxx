@@ -32,7 +32,7 @@
             "title": "Function to run a lookup",
             "description": "Function to call an internal trigger or action"
         },
-        "action_81e63e659c38de4b6eaec9097325f689": {
+        "getAbsencesRecuringRules": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns absence recurring rules ",
             "callParams": {
@@ -44,7 +44,7 @@
                 "out": "./lib/schemas/action_81e63e659c38de4b6eaec9097325f689.out.json"
             }
         },
-        "action_80cb58623fa2e1d730a407ed70db4c1e": {
+        "getAbcenses": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns absences",
             "callParams": {
@@ -56,7 +56,7 @@
                 "out": "./lib/schemas/action_80cb58623fa2e1d730a407ed70db4c1e.out.json"
             }
         },
-        "action_735e10ef129601e408ef235aa37fb297": {
+        "getArticleGroups": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns articles groups",
             "callParams": {
@@ -68,7 +68,7 @@
                 "out": "./lib/schemas/action_735e10ef129601e408ef235aa37fb297.out.json"
             }
         },
-        "e8bf3f3e9cc1f6bf6c4efa5100ac611a": {
+        "getArticles": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns articles",
             "callParams": {
@@ -80,7 +80,7 @@
                 "out": "./lib/schemas/e8bf3f3e9cc1f6bf6c4efa5100ac611a.out.json"
             }
         },
-        "f5679dd66dd627d197d5e4b86c9636bd": {
+        "getWorksheetRecurringRules": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns worksheet recurring rules",
             "callParams": {
@@ -92,7 +92,7 @@
                 "out": "./lib/schemas/f5679dd66dd627d197d5e4b86c9636bd.out.json"
             }
         },
-        "action_52e2315fe18cf54d1e8b43ce6f2bea60": {
+        "getLabels": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns all available labels",
             "callParams": {
@@ -104,7 +104,7 @@
                 "out": "./lib/schemas/action_52e2315fe18cf54d1e8b43ce6f2bea60.out.json"
             }
         },
-        "d0a8bc7e9272759f694dc2a6ca4e9932": {
+        "getAbsenceTypes": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns all available absence types",
             "callParams": {
@@ -116,7 +116,7 @@
                 "out": "./lib/schemas/d0a8bc7e9272759f694dc2a6ca4e9932.out.json"
             }
         },
-        "da72e8fdde8e937767b4a43e4d361278": {
+        "getNonAvailableData": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns the not availale master data in a date range",
             "callParams": {
@@ -128,7 +128,7 @@
                 "out": "./lib/schemas/da72e8fdde8e937767b4a43e4d361278.out.json"
             }
         },
-        "action_87e79cd28d0e619d3bbb5ba85c239002": {
+        "getWorksheets": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns worksheets",
             "callParams": {
@@ -140,7 +140,7 @@
                 "out": "./lib/schemas/action_87e79cd28d0e619d3bbb5ba85c239002.out.json"
             }
         },
-        "action_5b12d7faff08a93f76154bc60c8c112d": {
+        "getAccesstoken": {
             "main": "./lib/triggers/trigger.js",
             "title": "Revokes current user's access token",
             "callParams": {
@@ -152,7 +152,7 @@
                 "out": "./lib/schemas/action_5b12d7faff08a93f76154bc60c8c112d.out.json"
             }
         },
-        "action_16c591976ec6af03645833d82a190b8a": {
+        "getDocuments": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns documents",
             "callParams": {
@@ -164,7 +164,7 @@
                 "out": "./lib/schemas/action_16c591976ec6af03645833d82a190b8a.out.json"
             }
         },
-        "action_64bdf64df2ec4f2e8e16416969b2b795": {
+        "getAddresses": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns all addresses",
             "callParams": {
@@ -176,7 +176,7 @@
                 "out": "./lib/schemas/action_64bdf64df2ec4f2e8e16416969b2b795.out.json"
             }
         },
-        "a7ed19e48047d2e1ad9e97ae3df338d6": {
+        "getCustomers": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns customers",
             "callParams": {
@@ -188,7 +188,7 @@
                 "out": "./lib/schemas/a7ed19e48047d2e1ad9e97ae3df338d6.out.json"
             }
         },
-        "action_59474959295cdf7c3481db6e5a645794": {
+        "getDocumentations": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns documentations from specific assignment",
             "callParams": {
@@ -200,7 +200,7 @@
                 "out": "./lib/schemas/action_59474959295cdf7c3481db6e5a645794.out.json"
             }
         },
-        "action_0e572c4cbfc965e7da56607e3dc4ab43": {
+        "getEmployees": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns employees",
             "callParams": {
@@ -212,7 +212,7 @@
                 "out": "./lib/schemas/action_0e572c4cbfc965e7da56607e3dc4ab43.out.json"
             }
         },
-        "action_99ae74b1bc5c24aa099bf961ca3bdfd0": {
+        "getDesktopNotifications": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns your desktop notficiations",
             "callParams": {
@@ -224,7 +224,7 @@
                 "out": "./lib/schemas/action_99ae74b1bc5c24aa099bf961ca3bdfd0.out.json"
             }
         },
-        "bde48ca8c38e85a6633279e5ed6bdca9": {
+        "getSignatureTemplates": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns documentation signature templates",
             "callParams": {
@@ -236,7 +236,7 @@
                 "out": "./lib/schemas/bde48ca8c38e85a6633279e5ed6bdca9.out.json"
             }
         },
-        "ab49ec0a70fcfb5ef7efb324b88b27d9": {
+        "getEmployeesGroups": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns employees groups",
             "callParams": {
@@ -248,7 +248,7 @@
                 "out": "./lib/schemas/ab49ec0a70fcfb5ef7efb324b88b27d9.out.json"
             }
         },
-        "action_8e3e02b117c2c580afc82f2a3c799432": {
+        "getLicences": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns licenses",
             "callParams": {
@@ -260,7 +260,7 @@
                 "out": "./lib/schemas/action_8e3e02b117c2c580afc82f2a3c799432.out.json"
             }
         },
-        "action_338ea4c0ef6d5d669a96b293f0baf9ab": {
+        "getProjects": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns projects",
             "callParams": {
@@ -272,7 +272,7 @@
                 "out": "./lib/schemas/action_338ea4c0ef6d5d669a96b293f0baf9ab.out.json"
             }
         },
-        "e56db78478fb31f55f84d3b3e2abf46f": {
+        "getEmployeeInfo": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns your employee information",
             "callParams": {
@@ -284,7 +284,7 @@
                 "out": "./lib/schemas/e56db78478fb31f55f84d3b3e2abf46f.out.json"
             }
         },
-        "action_4bd124d6f4ff5d2b8ab873e7dabb81ec": {
+        "getRoles": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns roles",
             "callParams": {
@@ -296,7 +296,7 @@
                 "out": "./lib/schemas/action_4bd124d6f4ff5d2b8ab873e7dabb81ec.out.json"
             }
         },
-        "action_38e21873b84d1fa9536fb8ebe8042e92": {
+        "getTimesheets": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns timesheets",
             "callParams": {
@@ -308,7 +308,7 @@
                 "out": "./lib/schemas/action_38e21873b84d1fa9536fb8ebe8042e92.out.json"
             }
         },
-        "action_3c04f5ae33784344c36133acbcb0d08c": {
+        "getIcons": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns icons",
             "callParams": {
@@ -332,7 +332,7 @@
                 "out": "./lib/schemas/action_5d68b8dd8e052b2348892d2fd4a4cf51.out.json"
             }
         },
-        "action_4b451f7127bbbf3fa9ebbcfe8cf61f74": {
+        "getTools": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns tools",
             "callParams": {
@@ -344,7 +344,7 @@
                 "out": "./lib/schemas/action_4b451f7127bbbf3fa9ebbcfe8cf61f74.out.json"
             }
         },
-        "fbec35e80e8639c151b47b75c50b1be0": {
+        "getUploads": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns uploads",
             "callParams": {
@@ -356,7 +356,7 @@
                 "out": "./lib/schemas/fbec35e80e8639c151b47b75c50b1be0.out.json"
             }
         },
-        "a98c297f1e8a2c52f858133020bd7745": {
+        "getVehicles": {
             "main": "./lib/triggers/trigger.js",
             "title": "Returns vehicles",
             "callParams": {
@@ -370,7 +370,7 @@
         }
     },
     "actions": {
-        "action_9d4c85092d74f89af98ed27b11b2140d": {
+        "getRecurringRole": {
             "main": "./lib/actions/action.js",
             "title": "Updates a absence recurring rule ",
             "callParams": {
@@ -383,7 +383,7 @@
                 "out": "./lib/schemas/action_9d4c85092d74f89af98ed27b11b2140d.out.json"
             }
         },
-        "action_6b39f271e10e6f140a7a0269c42bce15": {
+        "getAbsenceRecurringRole": {
             "main": "./lib/actions/action.js",
             "title": "Returns a specific absence recurring rule",
             "callParams": {
@@ -395,7 +395,7 @@
                 "out": "./lib/schemas/action_6b39f271e10e6f140a7a0269c42bce15.out.json"
             }
         },
-        "action_86e918b0ba743a0be18c8200a68d026c": {
+        "addAbsence": {
             "main": "./lib/actions/action.js",
             "title": "Add absence",
             "callParams": {
@@ -408,7 +408,7 @@
                 "out": "./lib/schemas/action_86e918b0ba743a0be18c8200a68d026c.out.json"
             }
         },
-        "action_71d5e2ca61cfc8543f69fbf4cd62e36f": {
+        "updateAbsence": {
             "main": "./lib/actions/action.js",
             "title": "Update absence",
             "callParams": {
@@ -421,7 +421,7 @@
                 "out": "./lib/schemas/action_71d5e2ca61cfc8543f69fbf4cd62e36f.out.json"
             }
         },
-        "ebf5a5f676502b3a6ebd3d3fe927ec44": {
+        "getAbsenceType": {
             "main": "./lib/actions/action.js",
             "title": "Returns specific absence type",
             "callParams": {
@@ -433,7 +433,7 @@
                 "out": "./lib/schemas/ebf5a5f676502b3a6ebd3d3fe927ec44.out.json"
             }
         },
-        "bc2017ad217fdff413e6c6130c37cdba": {
+        "addAbsenceTyoe": {
             "main": "./lib/actions/action.js",
             "title": "Add new absence type",
             "callParams": {
@@ -446,7 +446,7 @@
                 "out": "./lib/schemas/bc2017ad217fdff413e6c6130c37cdba.out.json"
             }
         },
-        "action_46b9f0be6fd2104533d64ad2a07cd82b": {
+        "removeAbsenceType": {
             "main": "./lib/actions/action.js",
             "title": "Remove absence type",
             "callParams": {
@@ -458,7 +458,7 @@
                 "out": "./lib/schemas/action_46b9f0be6fd2104533d64ad2a07cd82b.out.json"
             }
         },
-        "e42659e0d49388b15e3b70af01a7df72": {
+        "addArticleGroup": {
             "main": "./lib/actions/action.js",
             "title": "Add new article group",
             "callParams": {
@@ -471,7 +471,7 @@
                 "out": "./lib/schemas/e42659e0d49388b15e3b70af01a7df72.out.json"
             }
         },
-        "action_5063bf7dc81190bf964b9b3a374009a7": {
+        "createAbsenceRecurringRole": {
             "main": "./lib/actions/action.js",
             "title": "Create a absence recurring rule",
             "callParams": {
@@ -484,7 +484,7 @@
                 "out": "./lib/schemas/action_5063bf7dc81190bf964b9b3a374009a7.out.json"
             }
         },
-        "action_9185dc9b906bb3d82315b61f76336052": {
+        "getArticleGroup": {
             "main": "./lib/actions/action.js",
             "title": "Returns specific article group",
             "callParams": {
@@ -496,7 +496,7 @@
                 "out": "./lib/schemas/action_9185dc9b906bb3d82315b61f76336052.out.json"
             }
         },
-        "action_7fde5766e2a0d094e49ae5c18935a9bc": {
+        "deleteAbsenceRecurringRule": {
             "main": "./lib/actions/action.js",
             "title": "Deletes a absence recurring rule",
             "callParams": {
@@ -508,7 +508,7 @@
                 "out": "./lib/schemas/action_7fde5766e2a0d094e49ae5c18935a9bc.out.json"
             }
         },
-        "action_6cdbb0970ae4d9b49a83ed99e69d6fff": {
+        "addArticle": {
             "main": "./lib/actions/action.js",
             "title": "Add article",
             "callParams": {
@@ -521,7 +521,7 @@
                 "out": "./lib/schemas/action_6cdbb0970ae4d9b49a83ed99e69d6fff.out.json"
             }
         },
-        "ed45224d731e51679f686976a7d91cb5": {
+        "removeArticle": {
             "main": "./lib/actions/action.js",
             "title": "Remove article",
             "callParams": {
@@ -533,7 +533,7 @@
                 "out": "./lib/schemas/ed45224d731e51679f686976a7d91cb5.out.json"
             }
         },
-        "cb71b1e39e091827fc7f0499cd994e97": {
+        "updateArticleGroup": {
             "main": "./lib/actions/action.js",
             "title": "Update article group",
             "callParams": {
@@ -546,7 +546,7 @@
                 "out": "./lib/schemas/cb71b1e39e091827fc7f0499cd994e97.out.json"
             }
         },
-        "d159015d554e034ce78c5eb11838993c": {
+        "getWorksheetRecurringRule": {
             "main": "./lib/actions/action.js",
             "title": "Returns a specific worksheet recurring rule",
             "callParams": {
@@ -558,7 +558,7 @@
                 "out": "./lib/schemas/d159015d554e034ce78c5eb11838993c.out.json"
             }
         },
-        "action_343c10c809afa1c90af93499591ab2b9": {
+        "updateAbsenceType": {
             "main": "./lib/actions/action.js",
             "title": "Updates a specific absence type",
             "callParams": {
@@ -571,7 +571,7 @@
                 "out": "./lib/schemas/action_343c10c809afa1c90af93499591ab2b9.out.json"
             }
         },
-        "action_4b67dbd41e5db890d04db828f41ec4fb": {
+        "addLabel": {
             "main": "./lib/actions/action.js",
             "title": "Add new label",
             "callParams": {
@@ -584,7 +584,7 @@
                 "out": "./lib/schemas/action_4b67dbd41e5db890d04db828f41ec4fb.out.json"
             }
         },
-        "action_8f37ffcac947d5a33c6a4e9b4e6cf864": {
+        "removeWorksheetLabel": {
             "main": "./lib/actions/action.js",
             "title": "Removes a worksheet label",
             "callParams": {
@@ -596,7 +596,7 @@
                 "out": "./lib/schemas/action_8f37ffcac947d5a33c6a4e9b4e6cf864.out.json"
             }
         },
-        "action_296bcff6e5318292268c09f819fc3639": {
+        "removeAbsence": {
             "main": "./lib/actions/action.js",
             "title": "Remove absence",
             "callParams": {
@@ -608,7 +608,7 @@
                 "out": "./lib/schemas/action_296bcff6e5318292268c09f819fc3639.out.json"
             }
         },
-        "action_419ff3f93015b12961748969d4c1b2d9": {
+        "getLabel": {
             "main": "./lib/actions/action.js",
             "title": "Returns specific label",
             "callParams": {
@@ -620,7 +620,7 @@
                 "out": "./lib/schemas/action_419ff3f93015b12961748969d4c1b2d9.out.json"
             }
         },
-        "b52c8d5f18a18d265986b6aca89ee144": {
+        "getWorksheet": {
             "main": "./lib/actions/action.js",
             "title": "Returns specific worksheet",
             "callParams": {
@@ -632,7 +632,7 @@
                 "out": "./lib/schemas/b52c8d5f18a18d265986b6aca89ee144.out.json"
             }
         },
-        "action_634ad1b2aa2a9699fb5dbff8b8c766a8": {
+        "updateWorksheetLabel": {
             "main": "./lib/actions/action.js",
             "title": "Updates a worksheet label",
             "callParams": {
@@ -645,7 +645,7 @@
                 "out": "./lib/schemas/action_634ad1b2aa2a9699fb5dbff8b8c766a8.out.json"
             }
         },
-        "c71f40648fbdea5cb348d11b1d44083a": {
+        "removeWorksheet": {
             "main": "./lib/actions/action.js",
             "title": "Removes a worksheet",
             "callParams": {
@@ -657,7 +657,7 @@
                 "out": "./lib/schemas/c71f40648fbdea5cb348d11b1d44083a.out.json"
             }
         },
-        "action_1e4a85348564db47735e47bcfe35a5e1": {
+        "createToken": {
             "main": "./lib/actions/action.js",
             "title": "Creates and returns an access token",
             "callParams": {
@@ -670,7 +670,7 @@
                 "out": "./lib/schemas/action_1e4a85348564db47735e47bcfe35a5e1.out.json"
             }
         },
-        "action_9ae2992e82586998195e9dc3d03c8763": {
+        "getCustomerAddress": {
             "main": "./lib/actions/action.js",
             "title": "Returns specific customer address",
             "callParams": {
@@ -682,7 +682,7 @@
                 "out": "./lib/schemas/action_9ae2992e82586998195e9dc3d03c8763.out.json"
             }
         },
-        "action_1a16f4996254cf49126cc3ab5e404222": {
+        "createWorksheetRecurringRole": {
             "main": "./lib/actions/action.js",
             "title": "Create a worksheet recurring rule",
             "callParams": {
@@ -695,7 +695,7 @@
                 "out": "./lib/schemas/action_1a16f4996254cf49126cc3ab5e404222.out.json"
             }
         },
-        "action_456eea23cec07f7ac25720cf9312f53c": {
+        "addCustomerAddress": {
             "main": "./lib/actions/action.js",
             "title": "Add customer address",
             "callParams": {
@@ -708,7 +708,7 @@
                 "out": "./lib/schemas/action_456eea23cec07f7ac25720cf9312f53c.out.json"
             }
         },
-        "action_57afd2f5a1139e59a5df5ab05050196d": {
+        "updateWorksheet": {
             "main": "./lib/actions/action.js",
             "title": "Updates a specific worksheet",
             "callParams": {
@@ -721,7 +721,7 @@
                 "out": "./lib/schemas/action_57afd2f5a1139e59a5df5ab05050196d.out.json"
             }
         },
-        "action_6572427eb1ae39412d85803250a120a4": {
+        "getCustomer": {
             "main": "./lib/actions/action.js",
             "title": "Returns specific customer",
             "callParams": {
@@ -733,7 +733,7 @@
                 "out": "./lib/schemas/action_6572427eb1ae39412d85803250a120a4.out.json"
             }
         },
-        "a68e60c5a1b24ce0102b292d327d07bc": {
+        "removeCustomerAddress": {
             "main": "./lib/actions/action.js",
             "title": "Remove customer address",
             "callParams": {
@@ -758,7 +758,7 @@
                 "out": "./lib/schemas/action_7db5a7bed5dc6fbbbff4c15868b2a143.out.json"
             }
         },
-        "ab374c8aa5bf61fac8a92d3ff5fe6e29": {
+        "updateArticle": {
             "main": "./lib/actions/action.js",
             "title": "Update article",
             "callParams": {
@@ -771,7 +771,7 @@
                 "out": "./lib/schemas/ab374c8aa5bf61fac8a92d3ff5fe6e29.out.json"
             }
         },
-        "action_20c82566a403866252ae46d699167812": {
+        "getAbsence": {
             "main": "./lib/actions/action.js",
             "title": "Returns specific absence",
             "callParams": {
@@ -783,7 +783,7 @@
                 "out": "./lib/schemas/action_20c82566a403866252ae46d699167812.out.json"
             }
         },
-        "action_5d210a2a0214891bd91caeb8db5e56e6": {
+        "updateCustomerAddress": {
             "main": "./lib/actions/action.js",
             "title": "Update customer address",
             "callParams": {
@@ -796,7 +796,7 @@
                 "out": "./lib/schemas/action_5d210a2a0214891bd91caeb8db5e56e6.out.json"
             }
         },
-        "action_0a83ce3816d4e86e0bccb67067e7b236": {
+        "getDocument": {
             "main": "./lib/actions/action.js",
             "title": "Returns specific document",
             "callParams": {
@@ -808,7 +808,7 @@
                 "out": "./lib/schemas/action_0a83ce3816d4e86e0bccb67067e7b236.out.json"
             }
         },
-        "eddc4df2a5d13ce3fdbdd72b066358f9": {
+        "addDocument": {
             "main": "./lib/actions/action.js",
             "title": "Add new document",
             "callParams": {
@@ -821,7 +821,7 @@
                 "out": "./lib/schemas/eddc4df2a5d13ce3fdbdd72b066358f9.out.json"
             }
         },
-        "action_503cde823acfc208d5bf1a5eb61a2941": {
+        "getSignatureTemplate": {
             "main": "./lib/actions/action.js",
             "title": "Returns specific signature template",
             "callParams": {
@@ -833,7 +833,7 @@
                 "out": "./lib/schemas/action_503cde823acfc208d5bf1a5eb61a2941.out.json"
             }
         },
-        "f4dfcc439622f187031eb86b5bffbd50": {
+        "removeSignatureTemplate": {
             "main": "./lib/actions/action.js",
             "title": "Remove signature template",
             "callParams": {
@@ -845,7 +845,7 @@
                 "out": "./lib/schemas/f4dfcc439622f187031eb86b5bffbd50.out.json"
             }
         },
-        "a66ce598e3aa2413845f3d04d660498f": {
+        "addDocumentation": {
             "main": "./lib/actions/action.js",
             "title": "Add documentation to specified assignment",
             "callParams": {
@@ -858,7 +858,7 @@
                 "out": "./lib/schemas/a66ce598e3aa2413845f3d04d660498f.out.json"
             }
         },
-        "ce2a955dd524677b0ccfc38bb477f1d5": {
+        "deleteDocumentation": {
             "main": "./lib/actions/action.js",
             "title": "Deletes a specific documentation",
             "callParams": {
@@ -870,7 +870,7 @@
                 "out": "./lib/schemas/ce2a955dd524677b0ccfc38bb477f1d5.out.json"
             }
         },
-        "eda908259df82c94e580390beebd0534": {
+        "updateDocument": {
             "main": "./lib/actions/action.js",
             "title": "Update document",
             "callParams": {
@@ -883,7 +883,7 @@
                 "out": "./lib/schemas/eda908259df82c94e580390beebd0534.out.json"
             }
         },
-        "action_7e06ce28c421188b344f906d954eea55": {
+        "removeCustomer": {
             "main": "./lib/actions/action.js",
             "title": "Remove customer",
             "callParams": {
@@ -895,7 +895,7 @@
                 "out": "./lib/schemas/action_7e06ce28c421188b344f906d954eea55.out.json"
             }
         },
-        "action_7370e993dfff14e5e7ddd7f864017cee": {
+        "deleteWorksheetRecurringRole": {
             "main": "./lib/actions/action.js",
             "title": "Deletes a worksheet recurring rule",
             "callParams": {
@@ -907,7 +907,7 @@
                 "out": "./lib/schemas/action_7370e993dfff14e5e7ddd7f864017cee.out.json"
             }
         },
-        "action_4d4c123aedeab50fd9cedb818f65eebd": {
+        "updateDocumentation": {
             "main": "./lib/actions/action.js",
             "title": "Updates a documentation",
             "callParams": {
@@ -920,7 +920,7 @@
                 "out": "./lib/schemas/action_4d4c123aedeab50fd9cedb818f65eebd.out.json"
             }
         },
-        "action_719bce30bacf5802500da4d3c51e1174": {
+        "updateSignatureTemplate": {
             "main": "./lib/actions/action.js",
             "title": "Updates a signature template",
             "callParams": {
@@ -933,7 +933,7 @@
                 "out": "./lib/schemas/action_719bce30bacf5802500da4d3c51e1174.out.json"
             }
         },
-        "action_23982bde5b93ea0d62c7dbf3fe657d22": {
+        "getEmployeeGroup": {
             "main": "./lib/actions/action.js",
             "title": "Returns specific employee group",
             "callParams": {
@@ -945,7 +945,7 @@
                 "out": "./lib/schemas/action_23982bde5b93ea0d62c7dbf3fe657d22.out.json"
             }
         },
-        "action_5d129bdd4591f827e82fcb25f1c55fdd": {
+        "removeDocument": {
             "main": "./lib/actions/action.js",
             "title": "Remove document",
             "callParams": {
@@ -957,7 +957,7 @@
                 "out": "./lib/schemas/action_5d129bdd4591f827e82fcb25f1c55fdd.out.json"
             }
         },
-        "action_4e241b4e553261ea8120fe69833f0b41": {
+        "addEmployeeGroup": {
             "main": "./lib/actions/action.js",
             "title": "Add new employee group",
             "callParams": {
@@ -970,7 +970,7 @@
                 "out": "./lib/schemas/action_4e241b4e553261ea8120fe69833f0b41.out.json"
             }
         },
-        "ccdf1644631fe372ddb127ac6d7e4b16": {
+        "removeEmployeeGroup": {
             "main": "./lib/actions/action.js",
             "title": "Remove employee group",
             "callParams": {
@@ -982,7 +982,7 @@
                 "out": "./lib/schemas/ccdf1644631fe372ddb127ac6d7e4b16.out.json"
             }
         },
-        "action_03726e71d8b27e1ded2cc860b8677027": {
+        "updateEmployee": {
             "main": "./lib/actions/action.js",
             "title": "Update employee",
             "callParams": {
@@ -995,7 +995,7 @@
                 "out": "./lib/schemas/action_03726e71d8b27e1ded2cc860b8677027.out.json"
             }
         },
-        "action_4f0f3fda90bbf3a917f03cdfaaaa1615": {
+        "getIcon": {
             "main": "./lib/actions/action.js",
             "title": "Returns specific icon",
             "callParams": {
@@ -1007,7 +1007,7 @@
                 "out": "./lib/schemas/action_4f0f3fda90bbf3a917f03cdfaaaa1615.out.json"
             }
         },
-        "b684627fe830bed649ee0eec369a0ca6": {
+        "getEmployee": {
             "main": "./lib/actions/action.js",
             "title": "Returns specific employee",
             "callParams": {
@@ -1019,7 +1019,7 @@
                 "out": "./lib/schemas/b684627fe830bed649ee0eec369a0ca6.out.json"
             }
         },
-        "ea995241508de1a5f216e288db18793d": {
+        "updateEmployeeGroup": {
             "main": "./lib/actions/action.js",
             "title": "Update employee group",
             "callParams": {
@@ -1032,7 +1032,7 @@
                 "out": "./lib/schemas/ea995241508de1a5f216e288db18793d.out.json"
             }
         },
-        "fb8c948aa378501c3f7926cac2efeb9f": {
+        "addEmployee": {
             "main": "./lib/actions/action.js",
             "title": "Add employee",
             "callParams": {
@@ -1045,7 +1045,7 @@
                 "out": "./lib/schemas/fb8c948aa378501c3f7926cac2efeb9f.out.json"
             }
         },
-        "action_90eb5181ad3ab19e556baf55a915ac88": {
+        "getDesktopNotification": {
             "main": "./lib/actions/action.js",
             "title": "Returns a specific desktop notficiation",
             "callParams": {
@@ -1057,7 +1057,7 @@
                 "out": "./lib/schemas/action_90eb5181ad3ab19e556baf55a915ac88.out.json"
             }
         },
-        "action_0ec305f360d9d34ef70ff80e2f87f29a": {
+        "saveInfoForCurrentEmployee": {
             "main": "./lib/actions/action.js",
             "title": "Save information of the logged in employee",
             "callParams": {
@@ -1070,7 +1070,7 @@
                 "out": "./lib/schemas/action_0ec305f360d9d34ef70ff80e2f87f29a.out.json"
             }
         },
-        "e22d2a7d1ea575b3eb35535bab83c0eb": {
+        "removeDesktopNotification": {
             "main": "./lib/actions/action.js",
             "title": "Removes desktop notificiation",
             "callParams": {
@@ -1082,7 +1082,7 @@
                 "out": "./lib/schemas/e22d2a7d1ea575b3eb35535bab83c0eb.out.json"
             }
         },
-        "action_9ea6f954eab0ea98b8cab88868de2824": {
+        "removeAllDesktopNotifications": {
             "main": "./lib/actions/action.js",
             "title": "Removes all desktop notificiation",
             "callParams": {
@@ -1094,7 +1094,7 @@
                 "out": "./lib/schemas/action_9ea6f954eab0ea98b8cab88868de2824.out.json"
             }
         },
-        "action_98e8f15838238f88918f434c99ad757b": {
+        "addProject": {
             "main": "./lib/actions/action.js",
             "title": "Add project",
             "callParams": {
@@ -1107,7 +1107,7 @@
                 "out": "./lib/schemas/action_98e8f15838238f88918f434c99ad757b.out.json"
             }
         },
-        "e095bb9cbf82955a5ea70408318e5e0b": {
+        "deleteProject": {
             "main": "./lib/actions/action.js",
             "title": "Update project",
             "callParams": {
@@ -1119,7 +1119,7 @@
                 "out": "./lib/schemas/e095bb9cbf82955a5ea70408318e5e0b.out.json"
             }
         },
-        "action_42214b89e50c8f25a6d476d0383fab10": {
+        "removeArticleGroup": {
             "main": "./lib/actions/action.js",
             "title": "Remove article group",
             "callParams": {
@@ -1131,7 +1131,7 @@
                 "out": "./lib/schemas/action_42214b89e50c8f25a6d476d0383fab10.out.json"
             }
         },
-        "d24726396abb11039257568b9dfa7a33": {
+        "updateTimesheet": {
             "main": "./lib/actions/action.js",
             "title": "Updates specific timesheet",
             "callParams": {
@@ -1144,7 +1144,7 @@
                 "out": "./lib/schemas/d24726396abb11039257568b9dfa7a33.out.json"
             }
         },
-        "action_44a866ca33d42a1da255f253e8824353": {
+        "updateProject": {
             "main": "./lib/actions/action.js",
             "title": "Update project",
             "callParams": {
@@ -1157,7 +1157,7 @@
                 "out": "./lib/schemas/action_44a866ca33d42a1da255f253e8824353.out.json"
             }
         },
-        "action_61f64e50a86d3f0690cfb7a9b1e4fec1": {
+        "getArticle": {
             "main": "./lib/actions/action.js",
             "title": "Returns specific article",
             "callParams": {
@@ -1169,7 +1169,7 @@
                 "out": "./lib/schemas/action_61f64e50a86d3f0690cfb7a9b1e4fec1.out.json"
             }
         },
-        "action_9f305a6add351ece6b1900d0aa4a057e": {
+        "getProject": {
             "main": "./lib/actions/action.js",
             "title": "Returns specific project",
             "callParams": {
@@ -1181,7 +1181,7 @@
                 "out": "./lib/schemas/action_9f305a6add351ece6b1900d0aa4a057e.out.json"
             }
         },
-        "aae7317fdbdf3f4b9af34f6f333c81c1": {
+        "removeTimesheet": {
             "main": "./lib/actions/action.js",
             "title": "Remove timesheet",
             "callParams": {
@@ -1193,7 +1193,7 @@
                 "out": "./lib/schemas/aae7317fdbdf3f4b9af34f6f333c81c1.out.json"
             }
         },
-        "action_5671dbd0f8f03ffea11e815cd7cc118a": {
+        "getToolGroup": {
             "main": "./lib/actions/action.js",
             "title": "Returns specific tool group",
             "callParams": {
@@ -1205,7 +1205,7 @@
                 "out": "./lib/schemas/action_5671dbd0f8f03ffea11e815cd7cc118a.out.json"
             }
         },
-        "d32207b4f86d48f4a799e232302ec678": {
+        "addTimesheet": {
             "main": "./lib/actions/action.js",
             "title": "Add time sheet",
             "callParams": {
@@ -1218,7 +1218,7 @@
                 "out": "./lib/schemas/d32207b4f86d48f4a799e232302ec678.out.json"
             }
         },
-        "action_1acb3151a3bb68e7f4169dbe9f9db464": {
+        "getTimesheet": {
             "main": "./lib/actions/action.js",
             "title": "Returns specific timesheet",
             "callParams": {
@@ -1230,7 +1230,7 @@
                 "out": "./lib/schemas/action_1acb3151a3bb68e7f4169dbe9f9db464.out.json"
             }
         },
-        "action_538cd88563fc0d96d695ba5882b115e3": {
+        "updateToolGroup": {
             "main": "./lib/actions/action.js",
             "title": "Update tool group",
             "callParams": {
@@ -1243,7 +1243,7 @@
                 "out": "./lib/schemas/action_538cd88563fc0d96d695ba5882b115e3.out.json"
             }
         },
-        "action_56a0b2126ceed23fc46cde3bcee32dc3": {
+        "removeToolGroup": {
             "main": "./lib/actions/action.js",
             "title": "Remove tool group",
             "callParams": {
@@ -1255,7 +1255,7 @@
                 "out": "./lib/schemas/action_56a0b2126ceed23fc46cde3bcee32dc3.out.json"
             }
         },
-        "action_83f9492941334ec42f650a73592053e8": {
+        "removeTool": {
             "main": "./lib/actions/action.js",
             "title": "Remove tool",
             "callParams": {
@@ -1267,7 +1267,7 @@
                 "out": "./lib/schemas/action_83f9492941334ec42f650a73592053e8.out.json"
             }
         },
-        "a5d57d2d518d8127683101a5f47bf480": {
+        "getVehicle": {
             "main": "./lib/actions/action.js",
             "title": "Returns specific vehicle",
             "callParams": {
@@ -1279,7 +1279,7 @@
                 "out": "./lib/schemas/a5d57d2d518d8127683101a5f47bf480.out.json"
             }
         },
-        "action_60e8c40014d5efdf70e8ed9bdb0b79ad": {
+        "getTool": {
             "main": "./lib/actions/action.js",
             "title": "Returns specific tool",
             "callParams": {
@@ -1291,7 +1291,7 @@
                 "out": "./lib/schemas/action_60e8c40014d5efdf70e8ed9bdb0b79ad.out.json"
             }
         },
-        "fcabb69f519db1e0fd0e2f1d700b9b48": {
+        "updateTool": {
             "main": "./lib/actions/action.js",
             "title": "Update tool",
             "callParams": {
@@ -1304,7 +1304,7 @@
                 "out": "./lib/schemas/fcabb69f519db1e0fd0e2f1d700b9b48.out.json"
             }
         },
-        "e39a898316b18a797ffd5a01ef93d073": {
+        "updateVehicle": {
             "main": "./lib/actions/action.js",
             "title": "Updates vehicle",
             "callParams": {
@@ -1317,7 +1317,7 @@
                 "out": "./lib/schemas/e39a898316b18a797ffd5a01ef93d073.out.json"
             }
         },
-        "action_3b9dd2094a646a46b7003ce0a684baa7": {
+        "getUpload": {
             "main": "./lib/actions/action.js",
             "title": "Returns specific upload",
             "callParams": {
@@ -1329,7 +1329,7 @@
                 "out": "./lib/schemas/action_3b9dd2094a646a46b7003ce0a684baa7.out.json"
             }
         },
-        "aa233b92133d0941d29d24faadb8bf34": {
+        "addTool": {
             "main": "./lib/actions/action.js",
             "title": "Add new tool",
             "callParams": {
@@ -1342,7 +1342,7 @@
                 "out": "./lib/schemas/aa233b92133d0941d29d24faadb8bf34.out.json"
             }
         },
-        "bc6dedfb444bfaea6f13a1d55c6f5938": {
+        "updateWorksheetRecurringRole": {
             "main": "./lib/actions/action.js",
             "title": "Updates a worksheet recurring rule",
             "callParams": {
@@ -1355,7 +1355,7 @@
                 "out": "./lib/schemas/bc6dedfb444bfaea6f13a1d55c6f5938.out.json"
             }
         },
-        "action_46072d08b3b828732e2bb3b0b88ae21c": {
+        "addToolGroup": {
             "main": "./lib/actions/action.js",
             "title": "Add new tool group",
             "callParams": {
@@ -1368,7 +1368,7 @@
                 "out": "./lib/schemas/action_46072d08b3b828732e2bb3b0b88ae21c.out.json"
             }
         },
-        "action_9b0cca8f3324ad456cb21150759bfb4c": {
+        "addWorksheet": {
             "main": "./lib/actions/action.js",
             "title": "Add worksheet",
             "callParams": {
@@ -1381,7 +1381,7 @@
                 "out": "./lib/schemas/action_9b0cca8f3324ad456cb21150759bfb4c.out.json"
             }
         },
-        "action_48b249e2df5179eaeb212fc2a294cb59": {
+        "addSignatureTemplate": {
             "main": "./lib/actions/action.js",
             "title": "Add new signature template",
             "callParams": {
@@ -1394,7 +1394,7 @@
                 "out": "./lib/schemas/action_48b249e2df5179eaeb212fc2a294cb59.out.json"
             }
         },
-        "action_90fe90e8115ea5c32ebb8b067770e8e4": {
+        "removeEmployee": {
             "main": "./lib/actions/action.js",
             "title": "Remove employee",
             "callParams": {
@@ -1406,7 +1406,7 @@
                 "out": "./lib/schemas/action_90fe90e8115ea5c32ebb8b067770e8e4.out.json"
             }
         },
-        "a5632b9716ed7fc332a89aef3ef928a7": {
+        "addCustomer": {
             "main": "./lib/actions/action.js",
             "title": "Add customer",
             "callParams": {
@@ -1419,7 +1419,7 @@
                 "out": "./lib/schemas/a5632b9716ed7fc332a89aef3ef928a7.out.json"
             }
         },
-        "action_089daa4e6a25a30aa320cd12b6ca2112": {
+        "removeVehicle": {
             "main": "./lib/actions/action.js",
             "title": "Remove vehicle",
             "callParams": {
@@ -1431,7 +1431,7 @@
                 "out": "./lib/schemas/action_089daa4e6a25a30aa320cd12b6ca2112.out.json"
             }
         },
-        "f36dc79b3a4058201a8c6d6c080d35fc": {
+        "markAllDesktopNotificationsAsRead": {
             "main": "./lib/actions/action.js",
             "title": "Marks all desktop notificiation as read",
             "callParams": {
@@ -1443,7 +1443,7 @@
                 "out": "./lib/schemas/f36dc79b3a4058201a8c6d6c080d35fc.out.json"
             }
         },
-        "action_93870602795c38b14702d7d7fd2d7da6": {
+        "addVehicle": {
             "main": "./lib/actions/action.js",
             "title": "Add vehicle",
             "callParams": {
@@ -1456,7 +1456,7 @@
                 "out": "./lib/schemas/action_93870602795c38b14702d7d7fd2d7da6.out.json"
             }
         },
-        "d0e145508eee234d0b4e608c86e1506b": {
+        "getDocumentation": {
             "main": "./lib/actions/action.js",
             "title": "Returns specific documentation",
             "callParams": {
